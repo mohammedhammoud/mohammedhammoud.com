@@ -1,0 +1,22 @@
+---
+import MainLayout from "@shared/layouts/Main.astro";
+import { useTranslations } from "@i18n/use-translations";
+import { toLocale } from "@i18n/to-locale";
+import { generateRootPaths } from "@shared/utils/generate-root-paths";
+
+export function getStaticPaths() {
+  return generateRootPaths();
+}
+
+const { translations } = Astro.props;
+const locale = toLocale(Astro.props.locale);
+const t = useTranslations(locale);
+---
+
+<MainLayout
+  title={t("site.title")}
+  description={t("site.description")}
+  locale={locale}
+  localeUrls={translations}
+  centered={true}
+/>

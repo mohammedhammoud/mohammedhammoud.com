@@ -1,0 +1,58 @@
+---
+import { Moon, Sun } from "@lucide/astro";
+import { useTranslations } from "@i18n/use-translations";
+import type { Locale } from "@/site.config";
+
+interface Props {
+  lang: Locale;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<button
+  type="button"
+  class="theme-toggle cursor-pointer p-2 text-gray-600 transition-colors hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100"
+  aria-label={t("theme.toggle")}
+>
+  <Moon class="theme-toggle-dark hidden" size={20} />
+  <Sun class="theme-toggle-light hidden" size={20} />
+</button>
+
+<script>
+  import { C } from "@/site.config";
+
+  const THEME_KEY = C.STORAGE_KEYS.THEME;
+  function initThemeToggle() {
+    const buttons =
+      document.querySelectorAll<HTMLButtonElement>(".theme-toggle");
+
+    buttons.forEach((button) => {
+      const darkIcon = button.querySelector(".theme-toggle-dark");
+      const lightIcon = button.querySelector(".theme-toggle-light");
+
+      function updateIcons() {
+        const isDark = document.documentElement.classList.contains("dark");
+        darkIcon?.classList.toggle("hidden", !isDark);
+        lightIcon?.classList.toggle("hidden", isDark);
+      }
+
+      function setTheme(theme: string) {
+        document.documentElement.classList.toggle("dark", theme === "dark");
+        localStorage.setItem(THEME_KEY, theme);
+        updateIcons();
+      }
+
+      updateIcons();
+
+      button.addEventListener("click", () => {
+        const isDark = document.documentElement.classList.contains("dark");
+        setTheme(isDark ? "light" : "dark");
+      });
+    });
+  }
+
+  initThemeToggle();
+  document.addEventListener("astro:after-swap", initThemeToggle);
+</script>

@@ -1,0 +1,12 @@
+[
+  {
+    "title": "Hack for Sweden",
+    "year": "2016",
+    "description": "Vinnare av både juryns specialpris och deltagarpriser med Will & Skill för WarnBox, en smarthemenhet utformad som en brandvarnare som automatiskt läser upp viktiga meddelanden (VMA) från SMHI och krisinformation.se. Byggd med Raspberry Pi och 3G-uppkoppling och använder Python och ett text-to-speech-API för att säkerställa att hushåll får kritiska varningar om stormar, farliga situationer eller kriser, även utan aktiv mediaanslutning eller smartphone."
+  },
+  {
+    "title": "The Nordea Innovation Challenge",
+    "year": "2014",
+    "description": "Vinnare av bästa mobilapplikation på detta 48-timmars hackathon med temat \"Banking on the Future\" i Stockholm. Levererade en OCR-kvittoslösning med Will & Skill som låter kunder skanna kvitton vid köp, automatiskt extrahera produktinformation och skapa ett sökbart digitalt arkiv som ger användare bättre kontroll över sin ekonomiska dokumentation. Lösningen bedömdes av en jury från Nordea, IBM och Apple."
+  }
+]

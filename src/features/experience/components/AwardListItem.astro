@@ -1,0 +1,21 @@
+---
+import Card from "@shared/components/Card.astro";
+
+interface Props {
+  title: string;
+  year: string;
+  description: string;
+}
+
+const { title, year, description } = Astro.props;
+---
+
+<Card variant="bordered">
+  <h3 class="mb-1 text-lg font-medium text-gray-900 dark:text-gray-100">
+    {title}
+  </h3>
+  <p class="mb-3 text-sm text-gray-500 dark:text-gray-400">{year}</p>
+  <p class="text-sm leading-relaxed text-gray-700 dark:text-gray-300">
+    {description}
+  </p>
+</Card>

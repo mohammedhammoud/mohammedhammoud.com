@@ -1,0 +1,24 @@
+---
+import { C } from "@/site.config";
+import { Rss } from "@lucide/astro";
+
+interface Props {
+  locale: string;
+}
+
+const { locale } = Astro.props;
+const year = new Date().getFullYear();
+---
+
+<footer class="py-8 text-center text-sm text-gray-500 dark:text-gray-400">
+  <div class="flex items-center justify-center gap-8">
+    <p>&copy; {year} {C.SITE.name}</p>
+    <a
+      href={`/rss${locale === "en" ? "" : `-${locale}`}.xml`}
+      class="flex items-center gap-1 text-orange-600 hover:text-orange-700 dark:text-orange-400 dark:hover:text-orange-500"
+    >
+      <Rss size={16} />
+      RSS
+    </a>
+  </div>
+</footer>

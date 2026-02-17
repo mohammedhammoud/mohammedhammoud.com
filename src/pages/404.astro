@@ -1,0 +1,35 @@
+---
+import MainLayout from "@shared/layouts/Main.astro";
+import { useTranslations } from "@i18n/use-translations";
+import { toLocale } from "@i18n/to-locale";
+import { LOCALES } from "@/site.config";
+import { getRelativeLocaleUrl } from "astro:i18n";
+
+const locale = toLocale(Astro.currentLocale);
+const t = useTranslations(locale);
+const localeUrls = Object.fromEntries(
+  LOCALES.map((loc) => [loc, getRelativeLocaleUrl(loc, "")]),
+);
+---
+
+<MainLayout
+  title={t("404.title")}
+  description={t("404.message")}
+  locale={locale}
+  localeUrls={localeUrls}
+  activeTab="blog"
+>
+  <div class="py-12 text-center">
+    <h1 class="mb-4 text-6xl font-bold text-gray-900 dark:text-white">404</h1>
+    <p class="mb-4 text-2xl text-gray-700 dark:text-gray-300">
+      {t("404.heading")}
+    </p>
+    <p class="mb-8 text-gray-600 dark:text-gray-400">{t("404.message")}</p>
+    <a
+      href={getRelativeLocaleUrl(locale, "")}
+      class="inline-block rounded-lg bg-blue-600 px-6 py-3 text-white transition-colors hover:bg-blue-700"
+    >
+      {t("404.goHome")}
+    </a>
+  </div>
+</MainLayout>

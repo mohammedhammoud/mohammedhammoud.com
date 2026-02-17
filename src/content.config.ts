@@ -1,19 +1,20 @@
-import { defineCollection, z } from 'astro:content';
-import { glob } from 'astro/loaders';
+import { defineCollection, z } from "astro:content";
+import { i18nLoader, extendI18nLoaderSchema } from "astro-loader-i18n";
+import { blogCollectionDefinition } from "@/features/blog/utils/blog-collection.definition";
 
-const blog = defineCollection({
-	// Load Markdown and MDX files in the `src/content/blog/` directory.
-	loader: glob({ base: './src/content/blog', pattern: '**/*.{md,mdx}' }),
-	// Type-check frontmatter using a schema
-	schema: ({ image }) =>
-		z.object({
-			title: z.string(),
-			description: z.string(),
-			// Transform string to Date object
-			pubDate: z.coerce.date(),
-			updatedDate: z.coerce.date().optional(),
-			heroImage: image().optional(),
-		}),
+const pages = defineCollection({
+  loader: i18nLoader({
+    pattern: "*/content/[^_]*.{md,mdx}",
+    base: "./src/features",
+  }),
+  schema: extendI18nLoaderSchema(
+    z.object({
+      title: z.string(),
+      description: z.string(),
+      path: z.string(),
+      shouldShowTitle: z.boolean().optional().default(true),
+    }),
+  ),
 });
 
-export const collections = { blog };
+export const collections = { blog: blogCollectionDefinition, pages };

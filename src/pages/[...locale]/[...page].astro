@@ -1,0 +1,47 @@
+---
+import { getCollection, render } from "astro:content";
+import { i18nPropsAndParams } from "astro-loader-i18n";
+import MainLayout from "@shared/layouts/Main.astro";
+import { defaultPropsAndParamsOptions } from "@shared/utils/default-props-and-params";
+import { useTranslations } from "@i18n/use-translations";
+import { toLocale } from "@i18n/to-locale";
+import { segmentToTab } from "@i18n/segment-to-tab";
+
+export async function getStaticPaths() {
+  const pages = await getCollection("pages");
+
+  return i18nPropsAndParams(pages, {
+    ...defaultPropsAndParamsOptions,
+    routePattern: "[...locale]/[...page]",
+    generateSegments: (entry) => ({ page: entry.data.path }),
+  });
+}
+
+const page = Astro.props;
+const locale = toLocale(page.data.locale);
+const t = useTranslations(locale);
+const { Content } = await render(page);
+---
+
+<MainLayout
+  title={page.data.title}
+  description={page.data.description}
+  locale={locale}
+  localeUrls={page.translations}
+  activeTab={segmentToTab(page.data.path, locale)}
+>
+  <article class="mx-auto max-w-3xl">
+    {
+      page.data.shouldShowTitle && (
+        <header class="mb-8">
+          <h1 class="mb-4 text-4xl font-bold text-gray-900 dark:text-white">
+            {page.data.title}
+          </h1>
+        </header>
+      )
+    }
+    <div class="prose dark:prose-invert max-w-none">
+      <Content />
+    </div>
+  </article>
+</MainLayout>

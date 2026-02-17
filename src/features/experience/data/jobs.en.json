@@ -1,0 +1,60 @@
+[
+  {
+    "title": "Senior Software Engineer and Tech/Team Lead",
+    "company": "Telia Company AB (Including TV4)",
+    "location": "Stockholm",
+    "period": "2022–present",
+    "responsibilities": [
+      "As Web Tech Lead, improved the developer workflow and release process for C More and Telia Play.",
+      "Led modernization of legacy web codebases to React/TypeScript patterns, and helped move parts of the mobile stack to React Native.",
+      "Drove the transition from REST to GraphQL to make data easier to work with on the client side.",
+      "Rebuilt the LG/Samsung Smart TV app in parallel (legacy → SolidJS) while still shipping changes continuously.",
+      "Introduced Cypress end-to-end testing and helped establish the baseline CI/CD setup.",
+      "Helped align parts of the web codebase with Domain-Driven Design and supported collaboration across the web and Smart TV teams (Community Lead)."
+    ]
+  },
+  {
+    "title": "Freelance Consultant",
+    "company": "The Clever Company AB",
+    "location": "Stockholm",
+    "period": "2018–present",
+    "responsibilities": [
+      "Freelance software engineer working with clients such as TV4, Telia, RA Motor, SafePoint AB, and Knivsta Motor.",
+      "Deliver end-to-end web and app solutions, from scoping and implementation to shipping to production.",
+      "Built an audiobook streaming platform for a nonprofit organization from idea to production, including admin tooling and content workflows.",
+      "Currently building a platform for housing cooperatives (BRF) to simplify administration, communication, and document handling."
+    ]
+  },
+  {
+    "title": "Software Engineer",
+    "company": "Telia Company AB",
+    "location": "Stockholm",
+    "period": "Sep 2018–Apr 2019",
+    "responsibilities": [
+      "Worked on the Telia Play streaming platform across web and mobile.",
+      "Took a leading role in migrating the mobile hybrid app from AngularJS to React Native.",
+      "Built and shipped features for both web and mobile to improve the overall user experience."
+    ]
+  },
+  {
+    "title": "Fullstack Developer",
+    "company": "Will & Skill AB",
+    "location": "Stockholm",
+    "period": "Sep 2014–Sep 2018",
+    "responsibilities": [
+      "Worked in-house and as a consultant for clients such as Samsung, Nike, Ericsson, and Telia.",
+      "Delivered end-to-end solutions and moved between frontend and backend depending on what the project needed.",
+      "Built everything from public web experiences to internal tools (e.g. CRM/intranet-style systems), with a strong focus on UX."
+    ]
+  },
+  {
+    "title": "Web Developer",
+    "company": "Swedish Armed Forces",
+    "location": "Sweden",
+    "period": "Jan 2014–Sep 2014",
+    "responsibilities": [
+      "Worked on improving the Swedish Armed Forces’ web presence.",
+      "Did enhancements and maintenance in a more structured, security-focused environment."
+    ]
+  }
+]

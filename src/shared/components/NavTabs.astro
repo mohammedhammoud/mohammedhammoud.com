@@ -1,0 +1,33 @@
+---
+interface Tab {
+  label: string;
+  href: string;
+  active: boolean;
+}
+
+interface Props {
+  tabs: Tab[];
+}
+
+const { tabs } = Astro.props;
+---
+
+<nav
+  class="mb-12 flex justify-center gap-8 border-b border-gray-200 dark:border-gray-700"
+>
+  {
+    tabs.map((tab) => (
+      <a
+        href={tab.href}
+        class:list={[
+          "pb-3 text-lg font-medium transition-colors",
+          tab.active
+            ? "border-b-2 border-blue-600 text-blue-600 dark:border-blue-400 dark:text-blue-400"
+            : "text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100",
+        ]}
+      >
+        {tab.label}
+      </a>
+    ))
+  }
+</nav>

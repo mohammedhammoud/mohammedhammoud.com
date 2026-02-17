@@ -1,0 +1,7 @@
+.history/
+node_modules/
+dist/
+build/
+.astro/
+yarn.lock
+package-lock.json

@@ -1,0 +1,54 @@
+---
+import MainLayout from "@shared/layouts/Main.astro";
+import BlogListItem from "@features/blog/components/BlogListItem.astro";
+import { useTranslations } from "@i18n/use-translations";
+import { toLocale } from "@i18n/to-locale";
+import { generateBlogIndexPaths } from "@features/blog/utils/generate-blog-index-paths";
+import type { BlogPost } from "@features/blog/utils/generate-blog-index-paths";
+import { C } from "@/site.config";
+
+export async function getStaticPaths() {
+  const paths = await generateBlogIndexPaths();
+  return paths.map((path) => ({
+    ...path,
+    params: {
+      ...path.params,
+      blog: C.SEGMENT_TRANSLATIONS[toLocale(path.props.locale)].blog,
+    },
+  }));
+}
+
+const { posts, translations } = Astro.props;
+const locale = toLocale(Astro.props.locale);
+const t = useTranslations(locale);
+---
+
+<MainLayout
+  title={t("site.title")}
+  description={t("site.description")}
+  locale={locale}
+  localeUrls={translations}
+  activeTab="blog"
+  class="space-y-6"
+>
+  <p class="text-gray-600 dark:text-gray-400">{t("blog.description")}</p>
+  <div class="space-y-4">
+    {
+      posts.map((post: BlogPost) => (
+        <BlogListItem
+          title={post.data.title}
+          date={new Date(post.data.publishedAt).toLocaleDateString(locale, {
+            day: "numeric",
+            month: "long",
+            year: "numeric",
+          })}
+          excerpt={post.data.description}
+          href={post.translatedPath}
+          fallbackLang={
+            post.data.locale !== locale ? post.data.locale : undefined
+          }
+        />
+      ))
+    }
+  </div>
+</MainLayout>

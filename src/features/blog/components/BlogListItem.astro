@@ -1,0 +1,38 @@
+---
+import Card from "@shared/components/Card.astro";
+
+interface Props {
+  title: string;
+  date: string;
+  excerpt: string;
+  href: string;
+  fallbackLang?: string;
+}
+
+const { title, date, excerpt, href, fallbackLang } = Astro.props;
+---
+
+<Card variant="bordered" hover={true}>
+  <a href={href} class="group block">
+    <div class="mb-2 flex items-start justify-between gap-3">
+      <h2
+        class="text-xl font-medium text-gray-900 transition-colors group-hover:text-blue-600 dark:text-gray-100 dark:group-hover:text-blue-400"
+      >
+        {title}
+      </h2>
+      {
+        fallbackLang && (
+          <span class="mt-0.5 shrink-0 rounded border border-gray-300 px-1.5 py-0.5 text-xs font-medium tracking-wide text-gray-500 uppercase dark:border-gray-600 dark:text-gray-400">
+            {fallbackLang}
+          </span>
+        )
+      }
+    </div>
+    <time class="mb-3 block text-sm text-gray-500 dark:text-gray-400"
+      >{date}</time
+    >
+    <p class="text-base leading-relaxed text-gray-700 dark:text-gray-300">
+      {excerpt}
+    </p>
+  </a>
+</Card>

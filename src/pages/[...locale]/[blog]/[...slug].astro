@@ -1,0 +1,41 @@
+---
+import { render } from "astro:content";
+import MainLayout from "@shared/layouts/Main.astro";
+import { toLocale } from "@i18n/to-locale";
+import { generateBlogPostPaths } from "@features/blog/utils/generate-blog-post-paths";
+import FormattedDate from "@shared/components/FormattedDate.astro";
+
+export async function getStaticPaths() {
+  return generateBlogPostPaths();
+}
+
+const props = Astro.props;
+const locale = toLocale(props.data.locale);
+const { Content } = await render(props);
+---
+
+<MainLayout
+  title={props.data.title}
+  description={props.data.description}
+  locale={locale}
+  localeUrls={props.translations}
+  activeTab="blog"
+>
+  <article class="mx-auto max-w-2xl">
+    <header class="mb-12 text-center">
+      <time
+        class="mb-4 block text-sm tracking-wide text-gray-500 uppercase dark:text-gray-400"
+      >
+        <FormattedDate date={props.data.publishedAt} locale={locale} />
+      </time>
+      <h1
+        class="text-5xl leading-tight font-bold text-gray-900 dark:text-white"
+      >
+        {props.data.title}
+      </h1>
+    </header>
+    <div class="prose dark:prose-invert max-w-none">
+      <Content />
+    </div>
+  </article>
+</MainLayout>

@@ -1,0 +1,80 @@
+---
+import MainLayout from "@shared/layouts/Main.astro";
+import JobListItem from "@features/experience/components/JobListItem.astro";
+import AwardListItem from "@features/experience/components/AwardListItem.astro";
+import CertificateListItem from "@features/experience/components/CertificateListItem.astro";
+import SectionHeading from "@shared/components/SectionHeading.astro";
+import { useTranslations } from "@i18n/use-translations";
+import { toLocale } from "@i18n/to-locale";
+import { generateExperienceStaticPaths } from "@features/experience/utils/generate-experience-static-paths";
+import { loadData } from "@features/experience/utils/load-data";
+import type { Job, Certificate, Award } from "@features/experience/types";
+
+export async function getStaticPaths() {
+  return generateExperienceStaticPaths();
+}
+
+const { translations } = Astro.props;
+const locale = toLocale(Astro.props.locale);
+const t = useTranslations(locale);
+
+const jobsData = await loadData<Job>("jobs", locale);
+const awardsData = await loadData<Award>("awards", locale);
+const certificatesData = await loadData<Certificate>("certificates", locale);
+---
+
+<MainLayout
+  title={t("nav.experience")}
+  description={t("site.description")}
+  locale={locale}
+  localeUrls={translations}
+  activeTab="experience"
+  class="space-y-6"
+>
+  <SectionHeading text={t("experience.title")} />
+
+  <div class="space-y-4">
+    {
+      jobsData.map((job) => (
+        <JobListItem
+          title={job.title}
+          company={job.company}
+          location={job.location}
+          period={job.period}
+          responsibilities={job.responsibilities}
+        />
+      ))
+    }
+  </div>
+
+  <SectionHeading text={t("experience.certificates")} />
+
+  <div class="space-y-4">
+    {
+      certificatesData.map((cert) => (
+        <CertificateListItem
+          title={cert.title}
+          year={cert.year}
+          description={cert.description}
+          credentialId={cert.credentialId}
+          credentialUrl={cert.credentialUrl}
+          credentialLabel={t("experience.credentialId")}
+        />
+      ))
+    }
+  </div>
+
+  <SectionHeading text={t("experience.awards")} />
+
+  <div class="space-y-4">
+    {
+      awardsData.map((award) => (
+        <AwardListItem
+          title={award.title}
+          year={award.year}
+          description={award.description}
+        />
+      ))
+    }
+  </div>
+</MainLayout>
