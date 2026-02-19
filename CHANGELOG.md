@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/mohammedhammoud/mohammedhammoud.com/compare/v1.0.0...v1.0.1) (2026-02-19)
+
+
+### Bug Fixes
+
+* use cycjimmy/semantic-release-action when releasing ([071f89e](https://github.com/mohammedhammoud/mohammedhammoud.com/commit/071f89e734b0e5e54a51865571b49fec6fe19495))
+
 # 1.0.0 (2026-02-19)
 
 
