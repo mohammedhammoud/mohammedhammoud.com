@@ -18,5 +18,6 @@ jobs:
 
       - run: yarn install --frozen-lockfile
       - run: yarn lint
+      - run: yarn astro sync
       - run: yarn typecheck
       - run: yarn test --reporter=verbose
