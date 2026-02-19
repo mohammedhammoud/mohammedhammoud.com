@@ -50,7 +50,7 @@ jobs:
       - run: yarn install --frozen-lockfile
 
       - id: release
-        run: npx semantic-release
+        uses: cycjimmy/semantic-release-action@v4
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
