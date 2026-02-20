@@ -1,3 +1,10 @@
+## [1.1.3](https://github.com/mohammedhammoud/mohammedhammoud.com/compare/v1.1.2...v1.1.3) (2026-02-20)
+
+
+### Bug Fixes
+
+* **blog:** anchor wraps Card for correct HTML structure ([acc000c](https://github.com/mohammedhammoud/mohammedhammoud.com/commit/acc000c71903f8b3b07ce0a3b8b29006be579536))
+
 ## [1.1.2](https://github.com/mohammedhammoud/mohammedhammoud.com/compare/v1.1.1...v1.1.2) (2026-02-20)
 
 
