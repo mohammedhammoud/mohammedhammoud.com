@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/mohammedhammoud/mohammedhammoud.com/compare/v1.1.1...v1.1.2) (2026-02-20)
+
+
+### Bug Fixes
+
+* improve job list item styling ([6ea4823](https://github.com/mohammedhammoud/mohammedhammoud.com/commit/6ea48235611bb5c41050f4c8fc20b648963f71fa))
+
 ## [1.1.1](https://github.com/mohammedhammoud/mohammedhammoud.com/compare/v1.1.0...v1.1.1) (2026-02-20)
 
 
