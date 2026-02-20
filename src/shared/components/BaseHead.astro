@@ -28,6 +28,21 @@ const ogImage = image
 const ogLocale = C.OG_LOCALES[locale];
 ---
 
+<!-- Google Analytics -->
+<script
+  async
+  src={`https://www.googletagmanager.com/gtag/js?id=${C.SITE.gaMeasurementId}`}
+></script>
+<script define:vars={{ gaMeasurementId: C.SITE.gaMeasurementId }}>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    // eslint-disable-next-line prefer-rest-params
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  gtag("config", gaMeasurementId);
+</script>
+
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />

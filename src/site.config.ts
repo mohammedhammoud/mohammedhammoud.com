@@ -28,6 +28,7 @@ export const C = {
   SITE: {
     name: "Mohammed Hammoud",
     url: "http://www.mohammedhammoud.com/",
+    gaMeasurementId: "G-FDJ1WXYXRJ",
     social: {
       github: "https://github.com/mohammedhammoud/",
       linkedin: "https://www.linkedin.com/in/mohammed-hammoud/",
