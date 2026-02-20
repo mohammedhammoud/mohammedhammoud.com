@@ -1,3 +1,15 @@
+# [1.1.0](https://github.com/mohammedhammoud/mohammedhammoud.com/compare/v1.0.2...v1.1.0) (2026-02-20)
+
+
+### Bug Fixes
+
+* set correct path in about.sv.md ([355a190](https://github.com/mohammedhammoud/mohammedhammoud.com/commit/355a190ac06aa4fb9d4a1c29aedb3c464eb2ab7a))
+
+
+### Features
+
+* **blog:** show language badge if any post differs from locale ([2957665](https://github.com/mohammedhammoud/mohammedhammoud.com/commit/29576656a7ed8360b5e7db14d05fd98000ec19a1))
+
 ## [1.0.2](https://github.com/mohammedhammoud/mohammedhammoud.com/compare/v1.0.1...v1.0.2) (2026-02-20)
 
 
