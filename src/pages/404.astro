@@ -19,8 +19,13 @@ const localeUrls = Object.fromEntries(
   localeUrls={localeUrls}
   activeTab="blog"
 >
-  <div class="py-12 text-center">
-    <h1 class="mb-4 text-6xl font-bold text-gray-900 dark:text-white">404</h1>
+  <div class="py-12 text-center" data-testid="not-found-page">
+    <h1
+      class="mb-4 text-6xl font-bold text-gray-900 dark:text-white"
+      data-testid="not-found-heading"
+    >
+      404
+    </h1>
     <p class="mb-4 text-2xl text-gray-700 dark:text-gray-300">
       {t("404.heading")}
     </p>

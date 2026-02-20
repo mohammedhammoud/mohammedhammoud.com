@@ -19,6 +19,7 @@ const { locale, localeUrls } = Astro.props;
       .map(([linkLocale, path]) => (
         <a
           href={path}
+          data-testid={`lang-${linkLocale}`}
           class:list={[
             "transition-colors",
             locale === linkLocale
