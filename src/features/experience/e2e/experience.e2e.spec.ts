@@ -9,6 +9,8 @@ function escapeForRegex(input: string) {
   return input.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
+const nonEmptyTextRegex = /.+/;
+
 for (const locale of locales) {
   test(`[${locale.key}] navigate to experience from top nav`, async ({
     page,
@@ -23,7 +25,7 @@ for (const locale of locales) {
     const mainContent = page.getByTestId("main-content");
 
     await expect(mainContent).toBeVisible();
-    expect(await mainContent.textContent()).toBeTruthy();
+    await expect(mainContent).toHaveText(nonEmptyTextRegex);
   });
 
   test(`[${locale.key}] experience page lists jobs, certificates and awards`, async ({

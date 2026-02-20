@@ -9,6 +9,8 @@ function escapeForRegex(input: string) {
   return input.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
+const nonEmptyTextRegex = /.+/;
+
 for (const locale of locales) {
   test(`[${locale.key}] navigate to blog from top nav`, async ({ page }) => {
     await page.goto(locale.home);
@@ -20,7 +22,7 @@ for (const locale of locales) {
 
     const description = page.getByTestId("blog-description");
     await expect(description).toBeVisible();
-    expect(await description.textContent()).toBeTruthy();
+    await expect(description).toHaveText(nonEmptyTextRegex);
   });
 
   test(`[${locale.key}] blog post page renders title and date`, async ({
@@ -33,14 +35,14 @@ for (const locale of locales) {
 
     const titleElement = page.getByTestId("blog-post-title");
     await expect(titleElement).toBeVisible();
-    expect(await titleElement.textContent()).toBeTruthy();
+    await expect(titleElement).toHaveText(nonEmptyTextRegex);
 
     const dateElement = page.getByTestId("blog-post-date");
     await expect(dateElement).toBeVisible();
-    expect(await dateElement.textContent()).toBeTruthy();
+    await expect(dateElement).toHaveText(nonEmptyTextRegex);
 
     const contentElement = page.getByTestId("blog-post-content");
     await expect(contentElement).toBeVisible();
-    expect(await contentElement.textContent()).toBeTruthy();
+    await expect(contentElement).toHaveText(nonEmptyTextRegex);
   });
 }
