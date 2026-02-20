@@ -7,51 +7,88 @@ draft: false
 
 Abstrakta modeller i Django är bra för delat beteende som soft delete, tidsstämplar och audit-fält. Problemet: de har ingen tabell, så du kan inte testa dem direkt via ORM:en. Du behöver en konkret modell.
 
-## Mönstret
+När jag behövde tester för en soft delete-mixin löste jag det med en liten egen `TestCase` som dynamiskt skapar en temporär konkret modell, skapar tabellen med `SchemaEditor` och tar bort den efter testklassen.
 
-Skapa en temporär konkret modell för testkörningen, skapa tabellen med `SchemaEditor`, kör testerna via ORM:en och ta sedan bort tabellen. Du får riktigt databasbeteende utan att lägga till testmodeller i dina migreringar.
-
-Här är en pytest-django-variant som fungerar bra i större testsviter:
+## Mönstret: en egen `TestCase`
 
 ```python
-import pytest
-from django.db import connection, models
+from django.db import connection
+from django.db.models.base import ModelBase
+from django.test import TestCase
 
-from myapp.models import SoftDeleteModel
 
+class AbstractModelMixinTestCase(TestCase):
+    mixin = None
+    model = None
 
-@pytest.fixture(scope="module")
-def concrete_model(django_db_setup, django_db_blocker):
-    with django_db_blocker.unblock():
-
-        class ConcreteModel(SoftDeleteModel):
-            name = models.CharField(max_length=100)
-
-            class Meta:
-                app_label = "myapp"
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.model = ModelBase(
+            "TestModel" + cls.mixin.__name__,
+            (cls.mixin,),
+            {"__module__": cls.mixin.__module__},
+        )
 
         with connection.schema_editor() as editor:
-            editor.create_model(ConcreteModel)
-        yield ConcreteModel
+            editor.create_model(cls.model)
+
+        super().setUpClass()
+
+    @classmethod
+    def tearDownClass(cls) -> None:
+        super().tearDownClass()
+
         with connection.schema_editor() as editor:
-            editor.delete_model(ConcreteModel)
+            editor.delete_model(cls.model)
 
-
-@pytest.mark.django_db
-def test_soft_delete_marks_row(concrete_model):
-    obj = concrete_model.objects.create(name="x")
-    obj.delete()
-    obj.refresh_from_db()
-    assert obj.deleted_at is not None
+        connection.close()
 ```
 
-Två saker att ha koll på:
+## Så använder jag den för soft delete
 
-- `app_label` måste peka på en installerad app.
-- Fixtures på modulnivå behöver `django_db_blocker.unblock()` för att komma åt databasen.
+Peka basklassen på din abstrakta modell (eller mixin) och testa beteendet genom den dynamiskt skapade modellen:
+
+```python
+from common.tests.base import AbstractModelMixinTestCase
+
+from myapp.models import SoftDeletionModel
+
+
+class SoftDeletionModelTestCase(AbstractModelMixinTestCase):
+    mixin = SoftDeletionModel
+
+    def test_soft_delete_instance(self):
+        instance = self.model.objects.create()
+        instance.delete()
+        self.assertIsNotNone(instance.deleted_at)
+```
+
+## Noteringar
+
+- Det här bygger på att Django kan lista ut app-label via `__module__`, så din mixin bör ligga i en installerad app.
+- Om du får `doesn't declare an explicit app_label and isn't in an application in INSTALLED_APPS`, sätt den uttryckligen (det måste vara appens _label_, inte modulnamnet):
+
+```python
+from django.apps import apps
+
+app_config = apps.get_containing_app_config(cls.mixin.__module__)
+if app_config is None:
+    raise RuntimeError("Mixin module is not in an installed app")
+
+
+class Meta:
+    app_label = app_config.label
+
+
+cls.model = ModelBase(
+    "TestModel" + cls.mixin.__name__,
+    (cls.mixin,),
+    {"__module__": cls.mixin.__module__, "Meta": Meta},
+)
+```
 
 ## Vad du ska testa
 
-Testa beteende, inte implementation. Om basmodellen har en manager som döljer soft-deletade rader, verifiera att de inte dyker upp i `.all()`. Testa inte SQL-utdata eller interna ORM-detaljer. De kan ändras utan förvarning.
+Testa beteende, inte implementation. Om basmodellen har en manager som döljer soft-deletade rader, se till att de inte dyker upp i `.all()`.
 
-Resultatet är en testsvit som behandlar din abstrakta modell som ett riktigt beroende: snabb att köra, tillräckligt realistisk för att fånga riktiga buggar och inga testmigrationer som skräpar ner historiken.
+Resultatet är en testsvit som behandlar din abstrakta modell som ett riktigt beroende: tillräckligt realistisk för att fånga riktiga buggar och inga testmigrationer som skräpar ner historiken.

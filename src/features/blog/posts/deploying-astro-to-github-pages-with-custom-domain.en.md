@@ -7,26 +7,23 @@ draft: false
 
 I deployed this site to GitHub Pages and wanted to use a custom domain. This post documents the configuration that worked.
 
-Source: <https://github.com/mohammedhammoud/mohammedhammoud.com>
-
----
+Repo: <https://github.com/mohammedhammoud/mohammedhammoud.com>
 
 ## Checklist
 
 To serve a custom domain from GitHub Pages, all of this must be true:
 
-- [x] DNS resolves to GitHub Pages
+- [x] DNS matches GitHub’s documented records (<https://docs.github.com/en/pages/getting-started-with-github-pages/securing-your-github-pages-site-with-https#verifying-the-dns-configuration>)
 - [x] GitHub Pages is enabled for the repository
-- [x] The repository is actually deploying a Pages site
+- [x] A successful Pages deploy has run at least once
 - [x] The custom domain is saved in GitHub so validation and TLS can start
+- [x] A `CNAME` file exists in the published Pages output
 
 If one of these is missing, you may see:
 
 ```text
 NotServedByPagesError
 ```
-
----
 
 ## GitHub configuration
 
@@ -41,7 +38,7 @@ Under **Build and deployment**:
 
 1. **Source**: **GitHub Actions**
 
-This matters if you deploy via a workflow. Without an active Pages deployment, GitHub cannot validate or serve your custom domain.
+Without an active Pages deployment, GitHub cannot validate or serve your custom domain.
 
 ### 2. Save your custom domain
 
@@ -58,14 +55,9 @@ After saving, GitHub should start:
 - [x] DNS validation
 - [x] TLS certificate provisioning
 
-You will typically see something like:
+Wait for TLS provisioning, then enable **Enforce HTTPS**.
 
-> TLS certificate is being provisioned  
-> Certificate requested
-
-When provisioning is complete, enable **Enforce HTTPS**.
-
----
+If the domain is attached to another Pages site, you must remove it there first.
 
 ## DNS configuration in your domain registrar
 
@@ -73,7 +65,7 @@ In your domain registrar (I use Loopia):
 
 ### 1. Remove wildcard records
 
-Remove wildcard (`*`) records that point somewhere else.
+Remove any wildcard `*` records.
 
 ### 2. Point `www` to GitHub Pages
 
@@ -96,8 +88,6 @@ If you use email on the domain, do not touch mail-related records such as MX, SP
 <details>
 <summary>What I actually did in my registrar</summary>
 
-This is what I actually did in my registrar:
-
 - Removed wildcard `*` A-records that pointed to a Loopia IP (so unknown subdomains no longer resolved incorrectly).
 - Set the apex `@` to GitHub Pages using these A-records:
 
@@ -114,16 +104,7 @@ This is what I actually did in my registrar:
 mohammedhammoud.github.io.
 ```
 
-- Left mail DNS unchanged (examples from my zone):
-
-```text
-@ MX mailcluster.loopia.se.
-@ MX mail2.loopia.se.
-@ TXT "v=spf1 include:spf.loopia.se -all"
-_autodiscover._tcp SRV ... autodiscover.loopia.com
-autoconfig CNAME autoconfig.loopia.com.
-NS ns1.loopia.se., NS ns2.loopia.se.
-```
+- Left mail DNS unchanged (MX/SPF/etc).
 
 - Verified DNS externally (not just locally) with:
 

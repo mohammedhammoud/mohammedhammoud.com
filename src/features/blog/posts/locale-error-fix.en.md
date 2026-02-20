@@ -5,33 +5,42 @@ publishedAt: 2026-01-21
 draft: false
 ---
 
-This error is almost never a Python problem. It's a mismatch between what your environment variables _say_ and what the OS actually _has installed_.
+This error is usually not a Python problem. It happens when `LANG`/`LC_*` points to a locale that isn't available in the OS.
 
-## What's going on
+## What happens
 
-Somewhere in the Python code, `setlocale(..., '')` gets called, which means "use whatever locale `LANG`/`LC_*` says". In minimal environments (slim containers, some CI images, freshly set up servers) those locales are often not installed.
+`setlocale(..., '')` means "use whatever locale `LANG`/`LC_*` says". In slim containers and CI images, that locale is often not generated.
 
-So you end up with `LANG=en_US.UTF-8` set, but no `en_US.UTF-8` locale definition on disk.
+Concrete example: `LANG=en_US.UTF-8`, but `en_US.UTF-8` isn't generated on the system, so the OS can't activate it.
 
 ## Two fixes
 
-### 1) Use `C.UTF-8`
+### Fix 1 (default): use `C.UTF-8`
 
-If you don't need locale-specific sorting or formatting and only need correct UTF-8 handling, `C.UTF-8` is the easiest option. It works reliably in containers and CI.
+If you don't need locale-specific sorting/formatting and only need correct UTF-8 handling, `C.UTF-8` is usually the easiest option for Docker and CI.
 
 ```dockerfile
 ENV LANG=C.UTF-8 \
     LC_ALL=C.UTF-8
 ```
 
-### 2) Install the locale you need
+If `C.UTF-8` isn't available in your image, use Fix 2.
 
-If you do need locale-aware formatting, install the locale in your OS image and set `LANG`/`LC_ALL` to match. The key is consistency: the environment variables need to match what's actually installed.
+### Fix 2 (when you need a real locale): generate it
 
-## Where to apply the fix
+If you do need locale-aware formatting (or a specific locale like `en_US.UTF-8`), generate that locale in the OS image and set `LANG`/`LC_ALL` to match exactly.
 
-- **In containers**: use `C.UTF-8` unless you have a specific reason not to.
-- **On VMs**: install locales once during provisioning.
-- **In CI**: don't rely on defaults, set `LANG`/`LC_ALL` explicitly.
+Debian/Ubuntu example:
 
-Once you treat locale as something you configure explicitly rather than assume is there, this error stops coming back.
+```dockerfile
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends locales \
+    && sed -i 's/^# *\(en_US.UTF-8 UTF-8\)/\1/' /etc/locale.gen \
+    && locale-gen en_US.UTF-8 \
+    && rm -rf /var/lib/apt/lists/*
+
+ENV LANG=en_US.UTF-8 \
+    LC_ALL=en_US.UTF-8
+```
+
+Configure locale explicitly and this error goes away permanently.
