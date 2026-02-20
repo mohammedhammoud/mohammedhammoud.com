@@ -1,3 +1,10 @@
+## [1.1.4](https://github.com/mohammedhammoud/mohammedhammoud.com/compare/v1.1.3...v1.1.4) (2026-02-20)
+
+
+### Bug Fixes
+
+* update copy for about section ([4089339](https://github.com/mohammedhammoud/mohammedhammoud.com/commit/408933971875b3f79bc1816c24fee0335893b317))
+
 ## [1.1.3](https://github.com/mohammedhammoud/mohammedhammoud.com/compare/v1.1.2...v1.1.3) (2026-02-20)
 
 
