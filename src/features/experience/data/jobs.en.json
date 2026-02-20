@@ -5,12 +5,12 @@
     "location": "Stockholm",
     "period": "2022–present",
     "responsibilities": [
-      "As Web Tech Lead, improved the developer workflow and release process for C More and Telia Play.",
-      "Led modernization of legacy web codebases to React/TypeScript patterns, and helped move parts of the mobile stack to React Native.",
-      "Drove the transition from REST to GraphQL to make data easier to work with on the client side.",
-      "Rebuilt the LG/Samsung Smart TV app in parallel (legacy → SolidJS) while still shipping changes continuously.",
-      "Introduced Cypress end-to-end testing and helped establish the baseline CI/CD setup.",
-      "Helped align parts of the web codebase with Domain-Driven Design and supported collaboration across the web and Smart TV teams (Community Lead)."
+      "Streamlined development workflows and implemented best practices as Web Tech Lead, enhancing efficiency for streaming services Cmore and Telia Play",
+      "Successfully migrated complex legacy web platforms to modern React architectures, improving performance and maintainability.",
+      "Led the transition from REST to GraphQL as part of the modernization of both the Web and Smart TV platforms.",
+      "Led the architecture and redevelopment of high-performance LG/Samsung TV apps, driving a parallel rewrite from a legacy stack to SolidJS while continuously shipping improvements to the Smart TV experience.",
+      "Built a Cypress E2E framework for Smart TV and Web that runs the same test suite across platforms and markets (LG/Tizen + Web, SE/FI/NO).",
+      "Introduced a domain-based architecture and standardized patterns across the codebase, reducing complexity and improving developer experience."
     ]
   },
   {
@@ -19,9 +19,8 @@
     "location": "Stockholm",
     "period": "2018–present",
     "responsibilities": [
-      "Freelance software engineer working with clients such as TV4, Telia, RA Motor, SafePoint AB, and Knivsta Motor.",
+      "Collaborated with prominent clients including TV4, Telia, RA Motor, SafePoint AB, Knivsta Motor, delivering tailored web and application solutions.",
       "Deliver end-to-end web and app solutions, from scoping and implementation to shipping to production.",
-      "Built an audiobook streaming platform for a nonprofit organization from idea to production, including admin tooling and content workflows.",
       "Currently building a platform for housing cooperatives (BRF) to simplify administration, communication, and document handling."
     ]
   },
@@ -50,11 +49,11 @@
   {
     "title": "Web Developer",
     "company": "Swedish Armed Forces",
-    "location": "Sweden",
+    "location": "Enköping",
     "period": "Jan 2014–Sep 2014",
     "responsibilities": [
-      "Worked on improving the Swedish Armed Forces’ web presence.",
-      "Did enhancements and maintenance in a more structured, security-focused environment."
+      "Improved the Swedish Armed Forces web capabilities by enhancing and maintaining their online presence.",
+      "Worked in a structured, security-conscious environment with a strong focus on stability and quality."
     ]
   }
 ]
