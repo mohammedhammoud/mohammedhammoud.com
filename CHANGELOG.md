@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/mohammedhammoud/mohammedhammoud.com/compare/v1.1.5...v1.2.0) (2026-02-20)
+
+
+### Features
+
+* add e2e tests ([#6](https://github.com/mohammedhammoud/mohammedhammoud.com/issues/6)) ([016b689](https://github.com/mohammedhammoud/mohammedhammoud.com/commit/016b689d212e74c6ca3bc7569b2026d7146b2fc2))
+
 ## [1.1.5](https://github.com/mohammedhammoud/mohammedhammoud.com/compare/v1.1.4...v1.1.5) (2026-02-20)
 
 
