@@ -1,7 +1,7 @@
 ---
 title: "Om mig"
 description: "Läs mer om min bakgrund och erfarenhet"
-path: "about"
+path: "om"
 shouldShowTitle: false
 ---
 
