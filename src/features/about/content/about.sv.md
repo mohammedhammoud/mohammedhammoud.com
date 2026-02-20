@@ -11,7 +11,7 @@ Jag heter Mohammed och bor i Stockholm. Jag har byggt produkter för webb och mo
 
 På Will & Skill jobbade jag i fyra år med kunder som Samsung, Nike och Ericsson. Därefter började jag på Telia Play, där jag ledde migreringen av mobilappen från en äldre hybridlösning till React Native.
 
-Efter det startade jag The Clever Company och arbetade som fristående konsult. Sedan 2022 är jag på Telia Company (jag började på TV4 innan avdelningarna slogs ihop). I dag är jag Tech Lead och Community Lead och jobbar med tekniska beslut, gemensamma sätt att jobba och samarbete mellan webb- och Smart TV-teamen.
+Efter det startade jag The Clever Company och arbetade som fristående konsult. År 2022 blev jag anställd på Telia Company, initialt inom TV4-verksamheten, där jag arbetade med C More och Telia Play. I dag arbetar jag med Telia Play som Tech Lead och Community Lead och driver tekniska beslut, gemensamma arbetssätt och samarbete mellan webb- och Smart TV-teamen.
 
 ## Vad jag jobbar med
 
