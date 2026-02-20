@@ -1,30 +1,30 @@
 ---
-title: "Om Mig"
-description: "Lär mer om min bakgrund och erfarenhet"
-path: "om"
+title: "Om mig"
+description: "Läs mer om min bakgrund och erfarenhet"
+path: "about"
 shouldShowTitle: false
 ---
 
 ## Bakgrund
 
-Jag heter Mohammed och är utvecklare i Stockholm. I över 13 år har jag byggt webb och mobila produkter inom byrå, produktteam och eget företag.
+Jag heter Mohammed och bor i Stockholm. Jag har byggt produkter för webb och mobil i över 13 år, både på byrå, i produktteam och i mitt eget bolag.
 
-På Will & Skill arbetade jag i fyra år med uppdrag för bland annat Samsung, Nike och Ericsson. Därefter gick jag till Telia Play och ledde migreringen av mobilappen från ett äldre hybridupplägg till React Native. Jag driver även The Clever Company vid sidan av, för enstaka utvalda projekt.
+På Will & Skill jobbade jag i fyra år med kunder som Samsung, Nike och Ericsson. Därefter började jag på Telia Play, där jag ledde migreringen av mobilappen från en äldre hybridlösning till React Native.
 
-Sedan 2022 är jag på Telia Company, med start på TV4 innan verksamheterna slogs ihop. I dag är jag Tech Lead och Community Lead med fokus på teknisk riktning, gemensamma arbetssätt och samarbete mellan webb- och smart-TV-teamen.
+Efter det startade jag The Clever Company och arbetade som fristående konsult. Sedan 2022 är jag på Telia Company (jag började på TV4 innan avdelningarna slogs ihop). I dag är jag Tech Lead och Community Lead och jobbar med tekniska beslut, gemensamma sätt att jobba och samarbete mellan webb- och Smart TV-teamen.
 
-## Vad jag arbetar med
+## Vad jag jobbar med
 
-Mitt primära frontend-språk är TypeScript. Jag arbetar främst med React och SolidJS, ofta i designsystem och komponentbibliotek. På mobilsidan utvecklar jag med React Native och har tidigare erfarenhet av native iOS i Swift.
+Jag bygger främst i TypeScript med React och SolidJS. Jag gillar tydliga gränser i kodbasen, återanvändbara UI-mönster och dataflöden som är lätta att följa och vidareutveckla.
 
-På backend arbetar jag med Node.js, Python och Django, oftast med REST-APIer. Jag har även arbetat med GraphQL i produktion när det passar. Jag är bekväm med PostgreSQL, Redis, Docker, AWS och CI/CD med GitHub Actions.
+Jag har jobbat både i monorepos och i upplägg där varje app eller tjänst har sitt eget repo. När det är rimligt bygger jag gärna gemensamma byggstenar, som komponenter, verktyg och konventioner som flera kan använda. I vardagen ingår ofta Vite, Storybook, linting, typkontroller och automatiska tester (enhetstester och end-to-end).
 
-## Hur jag tänker kring arbete
+På backend bygger jag API:er med Python/Django och Node.js och använder REST eller GraphQL beroende på behov. Jag är van att ta saker från utveckling till produktion med Docker och CI/CD.
 
-Jag lägger vikt vid att det jag bygger förblir begripligt och lätt att förändra över tid. Studier i Informatik vid Kristianstad University med fokus på interaktionsdesign och människa-datorinteraktion gör att användarupplevelse finns nära, även i tekniska beslut.
+Jag försöker hålla lösningar enkla och lätta att ändra över tid, med användaren i åtanke.
 
-## Utanför arbetet
+## Utanför jobbet
 
-Jag fördjupar mig i cybersäkerhet och arbetar mig igenom Googles Cybersecurity Certificate, med långsiktigt intresse för applikationssäkerhet och molnsäkerhet.
+Jag intresserar mig för cybersäkerhet och går just nu Googles Cybersecurity Certificate, med ett långsiktigt intresse för applikations- och molnsäkerhet.
 
-Jag talar engelska, svenska och arabiska.
+Jag pratar engelska, svenska och arabiska.
