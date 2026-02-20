@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/mohammedhammoud/mohammedhammoud.com/compare/v1.2.0...v1.2.1) (2026-02-20)
+
+
+### Bug Fixes
+
+* fix: double site title on first page ([e48b6f9](https://github.com/mohammedhammoud/mohammedhammoud.com/commit/e48b6f964c76fc34269e42a4f8e7d12ae1fdd3d7))
+
 # [1.2.0](https://github.com/mohammedhammoud/mohammedhammoud.com/compare/v1.1.5...v1.2.0) (2026-02-20)
 
 
