@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/mohammedhammoud/mohammedhammoud.com/compare/v1.1.0...v1.1.1) (2026-02-20)
+
+
+### Bug Fixes
+
+* update copy for blog ([9bd4e82](https://github.com/mohammedhammoud/mohammedhammoud.com/commit/9bd4e8262289e2107faef785032f192d46292a38))
+
 # [1.1.0](https://github.com/mohammedhammoud/mohammedhammoud.com/compare/v1.0.2...v1.1.0) (2026-02-20)
 
 
