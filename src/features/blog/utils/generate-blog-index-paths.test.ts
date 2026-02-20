@@ -99,6 +99,22 @@ describe("generateBlogIndexPaths", () => {
     expect(dates).toEqual([...dates].sort((a, b) => b - a));
   });
 
+  it("sets showLanguageBadge to false when all posts are in the page locale", async () => {
+    const { generateBlogIndexPaths } =
+      await import("./generate-blog-index-paths");
+    const paths = await generateBlogIndexPaths();
+    const enPath = paths.find((p) => p.props.locale === "en");
+    expect(enPath!.props.showLanguageBadge).toBe(false);
+  });
+
+  it("sets showLanguageBadge to true when the page contains fallback posts in another language", async () => {
+    const { generateBlogIndexPaths } =
+      await import("./generate-blog-index-paths");
+    const paths = await generateBlogIndexPaths();
+    const svPath = paths.find((p) => p.props.locale === "sv");
+    expect(svPath!.props.showLanguageBadge).toBe(true);
+  });
+
   it("includes a translations map with blog index URLs for every locale", async () => {
     const { generateBlogIndexPaths } =
       await import("./generate-blog-index-paths");

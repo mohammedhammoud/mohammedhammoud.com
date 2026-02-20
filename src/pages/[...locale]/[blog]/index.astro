@@ -18,7 +18,7 @@ export async function getStaticPaths() {
   }));
 }
 
-const { posts, translations } = Astro.props;
+const { posts, translations, showLanguageBadge } = Astro.props;
 const locale = toLocale(Astro.props.locale);
 const t = useTranslations(locale);
 ---
@@ -44,9 +44,8 @@ const t = useTranslations(locale);
           })}
           excerpt={post.data.description}
           href={post.translatedPath}
-          fallbackLang={
-            post.data.locale !== locale ? post.data.locale : undefined
-          }
+          language={post.data.locale}
+          showLanguageBadge={showLanguageBadge}
         />
       ))
     }

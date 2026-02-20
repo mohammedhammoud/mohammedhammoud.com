@@ -6,10 +6,11 @@ interface Props {
   date: string;
   excerpt: string;
   href: string;
-  fallbackLang?: string;
+  language: string;
+  showLanguageBadge: boolean;
 }
 
-const { title, date, excerpt, href, fallbackLang } = Astro.props;
+const { title, date, excerpt, href, language, showLanguageBadge } = Astro.props;
 ---
 
 <Card variant="bordered" hover={true}>
@@ -21,9 +22,9 @@ const { title, date, excerpt, href, fallbackLang } = Astro.props;
         {title}
       </h2>
       {
-        fallbackLang && (
+        showLanguageBadge && (
           <span class="mt-0.5 shrink-0 rounded border border-gray-300 px-1.5 py-0.5 text-xs font-medium tracking-wide text-gray-500 uppercase dark:border-gray-600 dark:text-gray-400">
-            {fallbackLang}
+            {language}
           </span>
         )
       }

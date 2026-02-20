@@ -54,9 +54,18 @@ export async function generateBlogIndexPaths() {
       ),
     );
 
+    const showLanguageBadge = allPosts.some(
+      (post) => post.data.locale !== propsLocale,
+    );
+
     return {
       params: { locale: paramsLocale },
-      props: { posts: allPosts, locale: propsLocale, translations },
+      props: {
+        posts: allPosts,
+        locale: propsLocale,
+        translations,
+        showLanguageBadge,
+      },
     };
   });
 }
