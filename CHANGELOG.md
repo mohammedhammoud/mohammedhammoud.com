@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/mohammedhammoud/mohammedhammoud.com/compare/v1.2.1...v1.2.2) (2026-02-20)
+
+
+### Bug Fixes
+
+* configure google analytics ([a665908](https://github.com/mohammedhammoud/mohammedhammoud.com/commit/a665908fb30423886374b02a4a17018f9a234263))
+
 ## [1.2.1](https://github.com/mohammedhammoud/mohammedhammoud.com/compare/v1.2.0...v1.2.1) (2026-02-20)
 
 
