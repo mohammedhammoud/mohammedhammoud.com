@@ -1984,7 +1984,7 @@
     "@typescript-eslint/types" "^8.56.0"
     debug "^4.4.3"
 
-"@typescript-eslint/scope-manager@8.56.0", "@typescript-eslint/scope-manager@^7.0.0 || ^8.0.0":
+"@typescript-eslint/scope-manager@8.56.0", "@typescript-eslint/scope-manager@^7.0.0 || ^8.0.0", "@typescript-eslint/scope-manager@^8.55.0":
   version "8.56.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/scope-manager/-/scope-manager-8.56.0.tgz#604030a4c6433df3728effdd441d47f45a86edb4"
   integrity sha512-7UiO/XwMHquH+ZzfVCfUNkIXlp/yQjjnlYUyYz7pfvlK3/EyyN6BK+emDmGNyQLBtLGaYrTAI6KOw8tFucWL2w==
@@ -2028,7 +2028,7 @@
     tinyglobby "^0.2.15"
     ts-api-utils "^2.4.0"
 
-"@typescript-eslint/utils@8.56.0":
+"@typescript-eslint/utils@8.56.0", "@typescript-eslint/utils@^8.55.0":
   version "8.56.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/utils/-/utils-8.56.0.tgz#063ce6f702ec603de1b83ee795ed5e877d6f7841"
   integrity sha512-RZ3Qsmi2nFGsS+n+kjLAYDPVlrzf7UhTffrDIKr+h2yzAlYP/y5ZulU0yeDEPItos2Ph46JAL5P/On3pe7kDIQ==
@@ -2066,6 +2066,14 @@
     obug "^2.1.1"
     std-env "^3.10.0"
     tinyrainbow "^3.0.3"
+
+"@vitest/eslint-plugin@^1.6.9":
+  version "1.6.9"
+  resolved "https://registry.yarnpkg.com/@vitest/eslint-plugin/-/eslint-plugin-1.6.9.tgz#ba00bd9bcf42ba901ea95c2c05e0049a0f930abd"
+  integrity sha512-9WfPx1OwJ19QLCSRLkqVO7//1WcWnK3fE/3fJhKMAmDe8+9G4rB47xCNIIeCq3FdEzkIoLTfDlwDlPBaUTMhow==
+  dependencies:
+    "@typescript-eslint/scope-manager" "^8.55.0"
+    "@typescript-eslint/utils" "^8.55.0"
 
 "@vitest/expect@4.0.18":
   version "4.0.18"
@@ -3247,6 +3255,13 @@ eslint-plugin-astro@^1.6.0:
     globals "^16.0.0"
     postcss "^8.4.14"
     postcss-selector-parser "^7.0.0"
+
+eslint-plugin-playwright@^2.7.0:
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-playwright/-/eslint-plugin-playwright-2.7.0.tgz#2fa40fa1205fae710e8037b30851229335df7b7e"
+  integrity sha512-kUgwDZL3knnuJF53WSf5xNnB1aLPnX8furoh0PSrmmFIfMfIMmY3sNd4gtZ2MUUnaIX1/A9ndYtD7bhV1dj+1g==
+  dependencies:
+    globals "^17.3.0"
 
 eslint-plugin-unused-imports@^4.4.1:
   version "4.4.1"
