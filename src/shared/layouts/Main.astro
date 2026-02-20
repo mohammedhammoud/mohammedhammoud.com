@@ -36,6 +36,7 @@ const t = useTranslations(locale);
 const tabs = C.TABS.map((tab) => ({
   label: t(`nav.${tab}` as const),
   href: getRelativeLocaleUrl(locale, C.SEGMENT_TRANSLATIONS[locale][tab]),
+  testId: `nav-tab-${tab}`,
   active: activeTab === tab,
 }));
 
@@ -87,7 +88,7 @@ const socialLinks = [
 
         <NavTabs tabs={tabs} />
 
-        <main class={className}>
+        <main class={className} data-testid="main-content">
           <slot />
         </main>
 

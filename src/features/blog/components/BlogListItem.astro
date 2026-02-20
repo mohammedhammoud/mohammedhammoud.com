@@ -13,7 +13,7 @@ interface Props {
 const { title, date, excerpt, href, language, showLanguageBadge } = Astro.props;
 ---
 
-<a href={href} class="group block">
+<a href={href} class="group block" data-testid="blog-post-link">
   <Card variant="bordered" hover={true}>
     <div class="mb-2 flex items-start justify-between gap-3">
       <h2

@@ -25,16 +25,21 @@ const { Content } = await render(props);
     <header class="mb-12 text-center">
       <time
         class="mb-4 block text-sm tracking-wide text-gray-500 uppercase dark:text-gray-400"
+        data-testid="blog-post-date"
       >
         <FormattedDate date={props.data.publishedAt} locale={locale} />
       </time>
       <h1
         class="text-5xl leading-tight font-bold text-gray-900 dark:text-white"
+        data-testid="blog-post-title"
       >
         {props.data.title}
       </h1>
     </header>
-    <div class="prose dark:prose-invert max-w-none">
+    <div
+      class="prose dark:prose-invert max-w-none"
+      data-testid="blog-post-content"
+    >
       <Content />
     </div>
   </article>

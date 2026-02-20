@@ -33,7 +33,7 @@ const certificatesData = await loadData<Certificate>("certificates", locale);
 >
   <SectionHeading text={t("experience.title")} />
 
-  <div class="space-y-4">
+  <div class="space-y-4" data-testid="jobs-list">
     {
       jobsData.map((job) => (
         <JobListItem
@@ -49,7 +49,7 @@ const certificatesData = await loadData<Certificate>("certificates", locale);
 
   <SectionHeading text={t("experience.certificates")} />
 
-  <div class="space-y-4">
+  <div class="space-y-4" data-testid="certificates-list">
     {
       certificatesData.map((cert) => (
         <CertificateListItem
@@ -66,7 +66,7 @@ const certificatesData = await loadData<Certificate>("certificates", locale);
 
   <SectionHeading text={t("experience.awards")} />
 
-  <div class="space-y-4">
+  <div class="space-y-4" data-testid="awards-list">
     {
       awardsData.map((award) => (
         <AwardListItem

@@ -2,6 +2,8 @@ import js from "@eslint/js";
 import astro from "eslint-plugin-astro";
 import prettier from "eslint-config-prettier";
 import unusedImports from "eslint-plugin-unused-imports";
+import playwright from "eslint-plugin-playwright";
+import vitest from "@vitest/eslint-plugin";
 import globals from "globals";
 import tseslint from "typescript-eslint";
 
@@ -41,6 +43,16 @@ export default tseslint.config(
         { argsIgnorePattern: "^_", varsIgnorePattern: "^_" },
       ],
     },
+  },
+  {
+    ...playwright.configs["flat/recommended"],
+    files: ["**/*.e2e.spec.ts"],
+  },
+  {
+    plugins: { vitest },
+    rules: vitest.configs.recommended.rules,
+    files: ["**/*.{test,spec}.ts"],
+    ignores: ["**/*.e2e.spec.ts"],
   },
   prettier,
 );

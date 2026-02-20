@@ -2,6 +2,7 @@
 interface Tab {
   label: string;
   href: string;
+  testId?: string;
   active: boolean;
 }
 
@@ -19,6 +20,7 @@ const { tabs } = Astro.props;
     tabs.map((tab) => (
       <a
         href={tab.href}
+        data-testid={tab.testId}
         class:list={[
           "pb-3 text-lg font-medium transition-colors",
           tab.active

@@ -1,4 +1,4 @@
-import { defineConfig } from "vitest/config";
+import { defineConfig, configDefaults } from "vitest/config";
 import { resolve } from "path";
 
 export default defineConfig({
@@ -13,6 +13,7 @@ export default defineConfig({
   },
   test: {
     globals: true,
+    exclude: [...configDefaults.exclude, "**/*.e2e.spec.ts"],
     coverage: {
       provider: "v8",
       include: ["src/**/*.ts"],

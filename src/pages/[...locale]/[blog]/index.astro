@@ -31,7 +31,9 @@ const t = useTranslations(locale);
   activeTab="blog"
   class="space-y-6"
 >
-  <p class="text-gray-600 dark:text-gray-400">{t("blog.description")}</p>
+  <p class="text-gray-600 dark:text-gray-400" data-testid="blog-description">
+    {t("blog.description")}
+  </p>
   <div class="space-y-4">
     {
       posts.map((post: BlogPost) => (

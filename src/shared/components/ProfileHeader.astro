@@ -25,7 +25,10 @@ const { name, bio, imageSrc, imageAlt = name, socialLinks, href } = Astro.props;
       class="mb-6 h-32 w-32 rounded-full object-cover transition-opacity hover:opacity-80"
     />
   </a>
-  <h1 class="mb-4 font-serif text-4xl text-gray-900 dark:text-gray-100">
+  <h1
+    class="mb-4 font-serif text-4xl text-gray-900 dark:text-gray-100"
+    data-testid="profile-heading"
+  >
     {name}
   </h1>
   <p
