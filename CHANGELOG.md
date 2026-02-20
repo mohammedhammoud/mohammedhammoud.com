@@ -1,3 +1,11 @@
+## [1.0.2](https://github.com/mohammedhammoud/mohammedhammoud.com/compare/v1.0.1...v1.0.2) (2026-02-20)
+
+
+### Bug Fixes
+
+* update copy for about  section ([fd572cd](https://github.com/mohammedhammoud/mohammedhammoud.com/commit/fd572cd0eed30a151e0f2bb9338bf9f17735acbe))
+* update copy for jobs section ([2860011](https://github.com/mohammedhammoud/mohammedhammoud.com/commit/28600116713085ace5af6e72eb40adc668d43c70))
+
 ## [1.0.1](https://github.com/mohammedhammoud/mohammedhammoud.com/compare/v1.0.0...v1.0.1) (2026-02-19)
 
 
