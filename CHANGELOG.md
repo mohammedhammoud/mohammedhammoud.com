@@ -1,3 +1,10 @@
+## [1.1.5](https://github.com/mohammedhammoud/mohammedhammoud.com/compare/v1.1.4...v1.1.5) (2026-02-20)
+
+
+### Bug Fixes
+
+* clarify about section timeline ([b5994e2](https://github.com/mohammedhammoud/mohammedhammoud.com/commit/b5994e2af5a88684af22d2744fdc28189e767163))
+
 ## [1.1.4](https://github.com/mohammedhammoud/mohammedhammoud.com/compare/v1.1.3...v1.1.4) (2026-02-20)
 
 
