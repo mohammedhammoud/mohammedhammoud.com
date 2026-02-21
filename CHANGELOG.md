@@ -1,3 +1,11 @@
+# [1.3.0](https://github.com/mohammedhammoud/mohammedhammoud.com/compare/v1.2.2...v1.3.0) (2026-02-21)
+
+
+### Features
+
+* **404:** localize static 404 page content ([b02477d](https://github.com/mohammedhammoud/mohammedhammoud.com/commit/b02477d01d642f03a71378dd5c111091446d4d08))
+* **ui:** add Button component ([c6d47ec](https://github.com/mohammedhammoud/mohammedhammoud.com/commit/c6d47ec2800b2b352d2070a9e5ac6aaebbc2e0f5))
+
 ## [1.2.2](https://github.com/mohammedhammoud/mohammedhammoud.com/compare/v1.2.1...v1.2.2) (2026-02-20)
 
 
