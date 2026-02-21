@@ -37,7 +37,7 @@ const { name, bio, imageSrc, imageAlt = name, socialLinks, href } = Astro.props;
     {bio}
   </p>
 
-  <div class="flex gap-4">
+  <div class="flex gap-4 print:hidden">
     {
       socialLinks.map((link) => (
         <a
