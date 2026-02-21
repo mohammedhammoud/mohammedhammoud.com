@@ -1,3 +1,11 @@
+## [1.3.1](https://github.com/mohammedhammoud/mohammedhammoud.com/compare/v1.3.0...v1.3.1) (2026-02-21)
+
+
+### Bug Fixes
+
+* **copy:** refine about and experience content ([92396f6](https://github.com/mohammedhammoud/mohammedhammoud.com/commit/92396f6e9363ef568473fb9bf33ae4d32de2fed6))
+* **i18n:** update 404 goHome copy ([7c528b8](https://github.com/mohammedhammoud/mohammedhammoud.com/commit/7c528b8cfea793d6c949abebc462ce89760bc296))
+
 # [1.3.0](https://github.com/mohammedhammoud/mohammedhammoud.com/compare/v1.2.2...v1.3.0) (2026-02-21)
 
 
