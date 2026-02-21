@@ -1,3 +1,10 @@
+## [1.3.2](https://github.com/mohammedhammoud/mohammedhammoud.com/compare/v1.3.1...v1.3.2) (2026-02-21)
+
+
+### Bug Fixes
+
+* **ui:** minor layout refinements ([7a43b2e](https://github.com/mohammedhammoud/mohammedhammoud.com/commit/7a43b2e3ea4732835e5b02fa74857dca0b597f24))
+
 ## [1.3.1](https://github.com/mohammedhammoud/mohammedhammoud.com/compare/v1.3.0...v1.3.1) (2026-02-21)
 
 
