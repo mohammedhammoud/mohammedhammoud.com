@@ -13,7 +13,7 @@ export default defineConfig({
   },
   test: {
     globals: true,
-    exclude: [...configDefaults.exclude, "**/*.e2e.spec.ts"],
+    exclude: [...configDefaults.exclude, "**/*.e2e.test.ts"],
     coverage: {
       provider: "v8",
       include: ["src/**/*.ts"],

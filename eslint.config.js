@@ -46,13 +46,13 @@ export default tseslint.config(
   },
   {
     ...playwright.configs["flat/recommended"],
-    files: ["**/*.e2e.spec.ts"],
+    files: ["**/*.e2e.test.ts"],
   },
   {
     plugins: { vitest },
     rules: vitest.configs.recommended.rules,
-    files: ["**/*.{test,spec}.ts"],
-    ignores: ["**/*.e2e.spec.ts"],
+    files: ["**/*.test.ts"],
+    ignores: ["**/*.e2e.test.ts"],
   },
   prettier,
 );
