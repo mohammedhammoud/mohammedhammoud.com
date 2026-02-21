@@ -7,11 +7,11 @@ shouldShowTitle: false
 
 ## Bakgrund
 
-Jag heter Mohammed, utvecklare baserad i Stockholm. I över 13 år har jag byggt webb- och mobilprodukter i byråmiljöer, produktteam och genom mitt eget konsultbolag.
+Jag heter Mohammed, utvecklare baserad i Stockholm. I över 13 år har jag byggt webb och mobilappar i byråmiljöer, produktteam och via mitt eget konsultbolag.
 
 Jag började som webbutvecklare på Försvarsmakten och arbetade därefter i fyra år på Will & Skill med uppdrag för kunder som Samsung, Nike, Ericsson och Telia.
 
-Jag började på Telia Play 2018, startade senare The Clever Company och fortsatte som fristående konsult. År 2022 återvände jag till Telia Company, initialt inom TV4-verksamheten, där jag arbetade med C More och Telia Play. I dag arbetar jag med Telia Play som Tech Lead och Community Lead och driver tekniska beslut, gemensamma arbetssätt och samarbete mellan webb- och Smart TV-teamen.
+2018 började jag på Telia Play. Senare startade jag The Clever Company och arbetade som fristående konsult. 2022 återvände jag till Telia Company, initialt inom TV4, där jag arbetade med C More och Telia Play. I dag arbetar jag med Telia Play som Tech Lead och Community Lead och driver tekniska beslut, gemensamma arbetssätt och samarbete mellan webb- och Smart TV-teamen.
 
 ## Vad jag jobbar med
 
@@ -27,4 +27,4 @@ Jag försöker hålla lösningar enkla och lätta att ändra över tid, med anv�
 
 Jag intresserar mig för cybersäkerhet och går just nu Googles Cybersecurity Certificate, med ett långsiktigt intresse för applikations- och molnsäkerhet.
 
-Jag pratar engelska, svenska och arabiska.
+Jag pratar svenska, engelska och arabiska.

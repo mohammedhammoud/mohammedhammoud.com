@@ -7,11 +7,11 @@ shouldShowTitle: false
 
 ## Background
 
-I'm Mohammed, a developer based in Stockholm. For over 13 years, I've built web and mobile products across agencies, product teams, and my own consultancy.
+I'm Mohammed, a developer based in Stockholm. For over 13 years, I've built web and mobile products across agencies, product teams, and my own company.
 
 I started out as a web developer at the Swedish Armed Forces, then spent four years at Will & Skill delivering for clients including Samsung, Nike, Ericsson, and Telia.
 
-I joined Telia Play in 2018, later founded The Clever Company, and continued as an independent consultant. In 2022, I returned to Telia Company, initially within the TV4 organization, working on C More and Telia Play. Today, I'm at Telia Play as a Tech Lead and Community Lead, driving technical decisions, shared ways of working, and collaboration across the Web and Smart TV teams.
+I joined Telia Play in 2018, later founded The Clever Company, and continued as an independent consultant. In 2022, I returned to Telia Company, initially in TV4, working on C More and Telia Play. Today, I'm at Telia Play as a Tech Lead and Community Lead, driving technical decisions, shared ways of working, and collaboration across the Web and Smart TV teams.
 
 ## What I work with
 
