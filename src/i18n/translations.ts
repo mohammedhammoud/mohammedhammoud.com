@@ -28,7 +28,7 @@ export const translations = {
     "404.title": "404 - Page Not Found",
     "404.heading": "Page not found",
     "404.message": "The page you are looking for does not exist.",
-    "404.goHome": "Go back home",
+    "404.goHome": "Go to homepage",
   },
   sv: {
     "site.title": "Mohammed Hammoud",
@@ -59,7 +59,7 @@ export const translations = {
     "404.title": "404 - Sidan hittades inte",
     "404.heading": "Sidan hittades inte",
     "404.message": "Sidan du letar efter finns inte.",
-    "404.goHome": "Gå tillbaka hem",
+    "404.goHome": "Till startsidan",
   },
 } as const;
 
