@@ -1,40 +1,71 @@
 ---
-import MainLayout from "@shared/layouts/Main.astro";
+import BaseHead from "@shared/components/BaseHead.astro";
+import Button from "@shared/components/Button.astro";
 import { useTranslations } from "@i18n/use-translations";
-import { toLocale } from "@i18n/to-locale";
-import { LOCALES } from "@/site.config";
+import { LOCALES, DEFAULT_LOCALE } from "@/site.config";
+import { LOCALE_PARAM_MAP } from "@shared/utils/locale-param-map";
 import { getRelativeLocaleUrl } from "astro:i18n";
 
-const locale = toLocale(Astro.currentLocale);
-const t = useTranslations(locale);
-const localeUrls = Object.fromEntries(
-  LOCALES.map((loc) => [loc, getRelativeLocaleUrl(loc, "")]),
-);
+const defaultT = useTranslations(DEFAULT_LOCALE);
+
+const locales = LOCALES.map((locale) => ({
+  key: locale,
+  prefix: LOCALE_PARAM_MAP[locale] ?? "",
+  t: useTranslations(locale),
+  homeUrl: getRelativeLocaleUrl(locale, ""),
+}));
 ---
 
-<MainLayout
-  title={t("404.title")}
-  description={t("404.message")}
-  locale={locale}
-  localeUrls={localeUrls}
-  activeTab="blog"
->
-  <div class="py-12 text-center" data-testid="not-found-page">
-    <h1
-      class="mb-4 text-6xl font-bold text-gray-900 dark:text-white"
-      data-testid="not-found-heading"
-    >
-      404
-    </h1>
-    <p class="mb-4 text-2xl text-gray-700 dark:text-gray-300">
-      {t("404.heading")}
-    </p>
-    <p class="mb-8 text-gray-600 dark:text-gray-400">{t("404.message")}</p>
-    <a
-      href={getRelativeLocaleUrl(locale, "")}
-      class="inline-block rounded-lg bg-blue-600 px-6 py-3 text-white transition-colors hover:bg-blue-700"
-    >
-      {t("404.goHome")}
-    </a>
-  </div>
-</MainLayout>
+<!doctype html>
+<html lang={DEFAULT_LOCALE}>
+  <head>
+    <BaseHead
+      title={defaultT("404.title")}
+      description={defaultT("404.message")}
+      locale={DEFAULT_LOCALE}
+    />
+  </head>
+  <body
+    class="bg-white font-serif text-gray-900 antialiased transition-colors dark:bg-gray-900 dark:text-gray-100"
+  >
+    <div class="flex min-h-screen items-center justify-center px-6">
+      <div class="py-12 text-center" data-testid="not-found-page">
+        <h1
+          class="mb-4 text-6xl font-bold text-gray-900 dark:text-white"
+          data-testid="not-found-heading"
+        >
+          404
+        </h1>
+        {
+          locales.map(({ key, prefix, t, homeUrl }) => (
+            <div data-locale={prefix || key} hidden>
+              <p class="mb-4 text-2xl text-gray-700 dark:text-gray-300">
+                {t("404.heading")}
+              </p>
+              <p class="mb-8 text-gray-600 dark:text-gray-400">
+                {t("404.message")}
+              </p>
+              <Button href={homeUrl}>{t("404.goHome")}</Button>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+  function activate() {
+    const all = document.querySelectorAll<HTMLElement>("[data-locale]");
+    const first = window.location.pathname.split("/").filter(Boolean)[0];
+    const active =
+      Array.from(all).find((el) => el.dataset.locale === first) ??
+      document.querySelector<HTMLElement>(
+        `[data-locale="${document.documentElement.lang}"]`,
+      );
+    if (active) active.hidden = false;
+  }
+
+  activate();
+  document.addEventListener("astro:after-swap", activate);
+</script>
