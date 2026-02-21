@@ -22,7 +22,7 @@ describe("useTranslations", () => {
   it("returns the 404.goHome key per locale", () => {
     const tEn = useTranslations("en");
     const tSv = useTranslations("sv");
-    expect(tEn("404.goHome")).toBe("Go back home");
-    expect(tSv("404.goHome")).toBe("Gå tillbaka hem");
+    expect(tEn("404.goHome")).toBe("Go to homepage");
+    expect(tSv("404.goHome")).toBe("Till startsidan");
   });
 });
