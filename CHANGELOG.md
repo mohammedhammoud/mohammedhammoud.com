@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/mohammedhammoud/mohammedhammoud.com/compare/v1.3.2...v1.4.0) (2026-02-24)
+
+
+### Features
+
+* **experience:** add Linux and SQL certificate ([4d6c7d5](https://github.com/mohammedhammoud/mohammedhammoud.com/commit/4d6c7d5f8292f801ceb2a03e96bc7c31b3fa9e27))
+
 ## [1.3.2](https://github.com/mohammedhammoud/mohammedhammoud.com/compare/v1.3.1...v1.3.2) (2026-02-21)
 
 
