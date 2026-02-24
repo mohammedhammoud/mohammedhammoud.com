@@ -1,3 +1,15 @@
+# [1.5.0](https://github.com/mohammedhammoud/mohammedhammoud.com/compare/v1.4.0...v1.5.0) (2026-02-24)
+
+
+### Bug Fixes
+
+* **experience:** re-order sections ([4421086](https://github.com/mohammedhammoud/mohammedhammoud.com/commit/442108696c405f7dab158c0658ea0e5d0e8114d2))
+
+
+### Features
+
+* **experience:** add Foundations of Cybersecurity certificate ([0b86ad7](https://github.com/mohammedhammoud/mohammedhammoud.com/commit/0b86ad781488158519dafce23401d55a59a135be))
+
 # [1.4.0](https://github.com/mohammedhammoud/mohammedhammoud.com/compare/v1.3.2...v1.4.0) (2026-02-24)
 
 
