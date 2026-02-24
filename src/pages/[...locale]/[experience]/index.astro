@@ -47,6 +47,20 @@ const certificatesData = await loadData<Certificate>("certificates", locale);
     }
   </div>
 
+  <SectionHeading text={t("experience.awards")} />
+
+  <div class="space-y-4" data-testid="awards-list">
+    {
+      awardsData.map((award) => (
+        <AwardListItem
+          title={award.title}
+          year={award.year}
+          description={award.description}
+        />
+      ))
+    }
+  </div>
+
   <SectionHeading text={t("experience.certificates")} />
 
   <div class="space-y-4" data-testid="certificates-list">
@@ -59,20 +73,6 @@ const certificatesData = await loadData<Certificate>("certificates", locale);
           credentialId={cert.credentialId}
           credentialUrl={cert.credentialUrl}
           credentialLabel={t("experience.credentialId")}
-        />
-      ))
-    }
-  </div>
-
-  <SectionHeading text={t("experience.awards")} />
-
-  <div class="space-y-4" data-testid="awards-list">
-    {
-      awardsData.map((award) => (
-        <AwardListItem
-          title={award.title}
-          year={award.year}
-          description={award.description}
         />
       ))
     }
