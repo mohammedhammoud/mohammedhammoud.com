@@ -1,5 +1,12 @@
 [
   {
+    "title": "Tools of the Trade: Linux and SQL",
+    "year": "2026",
+    "description": "Google Cybersecurity Professional Certificate course focused on Linux and SQL fundamentals, including navigating and managing the file system via Bash, handling file permissions, and authenticating and authorizing users.",
+    "credentialId": "LSO4WNNKV532",
+    "credentialUrl": "https://www.coursera.org/account/accomplishments/records/LSO4WNNKV532"
+  },
+  {
     "title": "Connect and Protect: Networks and Network Security",
     "year": "2026",
     "description": "Google Cybersecurity Professional Certificate course focused on network fundamentals and practical network security concepts (protocols, common controls, and how to reduce attack surface).",
