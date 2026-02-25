@@ -4,6 +4,8 @@ import MainLayout from "@shared/layouts/Main.astro";
 import { toLocale } from "@i18n/to-locale";
 import { generateBlogPostPaths } from "@features/blog/utils/generate-blog-post-paths";
 import FormattedDate from "@shared/components/FormattedDate.astro";
+import { useTranslations } from "@i18n/use-translations";
+import { calculateReadingTime } from "@shared/utils/calculate-reading-time";
 
 export async function getStaticPaths() {
   return generateBlogPostPaths();
@@ -11,7 +13,9 @@ export async function getStaticPaths() {
 
 const props = Astro.props;
 const locale = toLocale(props.data.locale);
+const t = useTranslations(locale);
 const { Content } = await render(props);
+const readingTimeMinutes = calculateReadingTime(props.body);
 ---
 
 <MainLayout
@@ -23,12 +27,15 @@ const { Content } = await render(props);
 >
   <article class="mx-auto max-w-2xl">
     <header class="mb-12 text-center">
-      <time
-        class="mb-4 block text-sm tracking-wide text-gray-500 uppercase dark:text-gray-400"
-        data-testid="blog-post-date"
+      <div
+        class="mb-4 flex flex-wrap items-center justify-center gap-2 text-sm tracking-wide text-gray-500 uppercase dark:text-gray-400"
       >
-        <FormattedDate date={props.data.publishedAt} locale={locale} />
-      </time>
+        <time data-testid="blog-post-date">
+          <FormattedDate date={props.data.publishedAt} locale={locale} />
+        </time>
+        <span aria-hidden="true">•</span>
+        <span>{t("blog.readingTime", { minutes: readingTimeMinutes })}</span>
+      </div>
       <h1
         class="text-5xl leading-tight font-bold text-gray-900 dark:text-white"
         data-testid="blog-post-title"

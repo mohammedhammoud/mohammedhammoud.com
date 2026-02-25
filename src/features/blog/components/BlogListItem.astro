@@ -4,13 +4,15 @@ import Card from "@shared/components/Card.astro";
 interface Props {
   title: string;
   date: string;
+  readingTime: string;
   excerpt: string;
   href: string;
   language: string;
   showLanguageBadge: boolean;
 }
 
-const { title, date, excerpt, href, language, showLanguageBadge } = Astro.props;
+const { title, date, readingTime, excerpt, href, language, showLanguageBadge } =
+  Astro.props;
 ---
 
 <a href={href} class="group block" data-testid="blog-post-link">
@@ -29,9 +31,13 @@ const { title, date, excerpt, href, language, showLanguageBadge } = Astro.props;
         )
       }
     </div>
-    <time class="mb-3 block text-sm text-gray-500 dark:text-gray-400"
-      >{date}</time
+    <div
+      class="mb-3 flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400"
     >
+      <time>{date}</time>
+      <span aria-hidden="true">•</span>
+      <span>{readingTime}</span>
+    </div>
     <p class="text-base leading-relaxed text-gray-700 dark:text-gray-300">
       {excerpt}
     </p>
