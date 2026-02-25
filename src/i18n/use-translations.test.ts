@@ -1,4 +1,23 @@
-import { describe, it, expect } from "vitest";
+import { describe, it, expect, vi } from "vitest";
+
+vi.mock("./translations", () => ({
+  translations: {
+    en: {
+      "nav.blog": "Blog",
+      "nav.experience": "Experience",
+      "404.goHome": "Go to homepage",
+      "site.description": "My value: {{value}}",
+      "profile.bio": "My value: {{ value }}",
+    },
+    sv: {
+      "nav.blog": "Blogg",
+      "nav.experience": "Erfarenhet",
+      "404.goHome": "Till startsidan",
+      "site.description": "Mitt varde: {{value}}",
+      "profile.bio": "Mitt varde: {{ value }}",
+    },
+  },
+}));
 import { useTranslations } from "./use-translations";
 
 describe("useTranslations", () => {
@@ -24,5 +43,15 @@ describe("useTranslations", () => {
     const tSv = useTranslations("sv");
     expect(tEn("404.goHome")).toBe("Go to homepage");
     expect(tSv("404.goHome")).toBe("Till startsidan");
+  });
+
+  it("interpolates variables without whitespace", () => {
+    const t = useTranslations("en");
+    expect(t("site.description", { value: 123 })).toBe("My value: 123");
+  });
+
+  it("interpolates variables with whitespace", () => {
+    const t = useTranslations("sv");
+    expect(t("profile.bio", { value: 456 })).toBe("Mitt varde: 456");
   });
 });
