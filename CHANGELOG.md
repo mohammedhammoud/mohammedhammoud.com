@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/mohammedhammoud/mohammedhammoud.com/compare/v1.5.0...v1.6.0) (2026-02-25)
+
+
+### Features
+
+* **blog:** add localized reading time to blog posts ([#10](https://github.com/mohammedhammoud/mohammedhammoud.com/issues/10)) ([07a739e](https://github.com/mohammedhammoud/mohammedhammoud.com/commit/07a739e99f2ebf7fb0ef9be589f8ceaf933eaa89))
+
 # [1.5.0](https://github.com/mohammedhammoud/mohammedhammoud.com/compare/v1.4.0...v1.5.0) (2026-02-24)
 
 
