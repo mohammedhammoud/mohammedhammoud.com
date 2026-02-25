@@ -10,6 +10,7 @@ export const translations = {
 
     "blog.description":
       "Personal notes on software architecture, frontend systems, and backend design, focused on clear explanations and solutions that work in practice.",
+    "blog.readingTime": "{{minutes}} min read",
 
     "profile.name": "Mohammed Hammoud",
     "profile.bio":
@@ -41,6 +42,7 @@ export const translations = {
 
     "blog.description":
       "Personliga anteckningar om mjukvaruarkitektur, frontendsystem och backenddesign, med fokus på tydliga förklaringar och lösningar som fungerar i praktiken.",
+    "blog.readingTime": "{{minutes}} min läsning",
 
     "profile.name": "Mohammed Hammoud",
     "profile.bio":

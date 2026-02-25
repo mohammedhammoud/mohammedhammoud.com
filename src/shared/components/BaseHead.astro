@@ -30,10 +30,11 @@ const ogLocale = C.OG_LOCALES[locale];
 
 <!-- Google Analytics -->
 <script
+  is:inline
   async
   src={`https://www.googletagmanager.com/gtag/js?id=${C.SITE.gaMeasurementId}`}
 ></script>
-<script define:vars={{ gaMeasurementId: C.SITE.gaMeasurementId }}>
+<script is:inline define:vars={{ gaMeasurementId: C.SITE.gaMeasurementId }}>
   window.dataLayer = window.dataLayer || [];
   function gtag() {
     // eslint-disable-next-line prefer-rest-params

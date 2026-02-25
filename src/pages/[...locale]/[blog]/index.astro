@@ -5,6 +5,7 @@ import { useTranslations } from "@i18n/use-translations";
 import { toLocale } from "@i18n/to-locale";
 import { generateBlogIndexPaths } from "@features/blog/utils/generate-blog-index-paths";
 import type { BlogPost } from "@features/blog/utils/generate-blog-index-paths";
+import { calculateReadingTime } from "@shared/utils/calculate-reading-time";
 import { C } from "@/site.config";
 
 export async function getStaticPaths() {
@@ -43,6 +44,9 @@ const t = useTranslations(locale);
             day: "numeric",
             month: "long",
             year: "numeric",
+          })}
+          readingTime={t("blog.readingTime", {
+            minutes: calculateReadingTime(post.body),
           })}
           excerpt={post.data.description}
           href={post.translatedPath}
