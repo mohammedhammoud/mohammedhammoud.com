@@ -5,6 +5,10 @@ const makeWords = (count: number) =>
   Array.from({ length: count }, () => "word").join(" ");
 
 describe("calculateReadingTime", () => {
+  it("returns at least one minute for undefined input", () => {
+    expect(calculateReadingTime(undefined)).toBe(1);
+  });
+
   it("returns at least one minute for empty input", () => {
     expect(calculateReadingTime("")).toBe(1);
   });
