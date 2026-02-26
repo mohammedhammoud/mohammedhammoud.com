@@ -11,6 +11,9 @@ export const translations = {
     "blog.description":
       "Personal notes on software architecture, frontend systems, and backend design, focused on clear explanations and solutions that work in practice.",
     "blog.readingTime": "{{minutes}} min read",
+    "blog.tags": "Tags",
+    "blog.allTags": "All tags",
+    "blog.tagHeading": "Tag: {{tag}}",
 
     "profile.name": "Mohammed Hammoud",
     "profile.bio":
@@ -43,6 +46,9 @@ export const translations = {
     "blog.description":
       "Personliga anteckningar om mjukvaruarkitektur, frontendsystem och backenddesign, med fokus på tydliga förklaringar och lösningar som fungerar i praktiken.",
     "blog.readingTime": "{{minutes}} min läsning",
+    "blog.tags": "Taggar",
+    "blog.allTags": "Alla taggar",
+    "blog.tagHeading": "Tagg: {{tag}}",
 
     "profile.name": "Mohammed Hammoud",
     "profile.bio":

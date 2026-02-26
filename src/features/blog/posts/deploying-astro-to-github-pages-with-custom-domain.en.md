@@ -2,6 +2,7 @@
 title: "Deploying to GitHub Pages with a Custom Domain"
 description: "DNS plus GitHub Pages settings that make custom domains work, and the common causes of NotServedByPagesError."
 publishedAt: 2026-02-20
+tags: ["astro", "github-pages", "dns"]
 draft: false
 ---
 

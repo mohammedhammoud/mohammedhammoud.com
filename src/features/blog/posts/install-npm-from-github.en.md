@@ -2,6 +2,7 @@
 title: "Installing npm packages from GitHub"
 description: "How to use forks and unreleased fixes without making your dependency setup hard to maintain."
 publishedAt: 2026-01-07
+tags: ["npm", "dependencies", "github"]
 draft: false
 ---
 

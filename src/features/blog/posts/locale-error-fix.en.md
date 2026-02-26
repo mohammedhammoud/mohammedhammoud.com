@@ -2,6 +2,7 @@
 title: "Fixing locale.Error: unsupported locale setting in Docker and CI"
 description: "The real cause of locale.Error and the two fixes that actually matter: generate locales, or standardize on C.UTF-8."
 publishedAt: 2026-01-21
+tags: ["docker", "ci", "python"]
 draft: false
 ---
 

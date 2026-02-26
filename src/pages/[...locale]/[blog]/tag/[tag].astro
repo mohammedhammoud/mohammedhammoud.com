@@ -1,0 +1,55 @@
+---
+import MainLayout from "@shared/layouts/Main.astro";
+import BlogListItem from "@features/blog/components/BlogListItem.astro";
+import { useTranslations } from "@i18n/use-translations";
+import SectionHeading from "@shared/components/SectionHeading.astro";
+import { toLocale } from "@i18n/to-locale";
+import { calculateReadingTime } from "@shared/utils/calculate-reading-time";
+import type { BlogPost } from "@features/blog/utils/generate-blog-index-paths";
+import { generateBlogTagPaths } from "@features/blog/utils/generate-blog-tag-paths";
+
+export async function getStaticPaths() {
+  return generateBlogTagPaths();
+}
+
+const { posts, translations, locale: propsLocale, tag } = Astro.props;
+const locale = toLocale(propsLocale);
+const t = useTranslations(locale);
+const pageTitle = t("blog.tagHeading", { tag });
+const showLanguageBadge = posts.some(
+  (post: BlogPost) => post.data.locale !== propsLocale,
+);
+---
+
+<MainLayout
+  title={pageTitle}
+  description={pageTitle}
+  locale={locale}
+  localeUrls={translations}
+  activeTab="blog"
+  class="space-y-6"
+>
+  <SectionHeading data-testid="blog-tag-heading" text={pageTitle} />
+
+  <div class="space-y-4">
+    {
+      posts.map((post: BlogPost) => (
+        <BlogListItem
+          title={post.data.title}
+          date={new Date(post.data.publishedAt).toLocaleDateString(locale, {
+            day: "numeric",
+            month: "long",
+            year: "numeric",
+          })}
+          readingTime={t("blog.readingTime", {
+            minutes: calculateReadingTime(post.body),
+          })}
+          excerpt={post.data.description}
+          href={post.translatedPath}
+          language={post.data.locale}
+          showLanguageBadge={showLanguageBadge}
+        />
+      ))
+    }
+  </div>
+</MainLayout>

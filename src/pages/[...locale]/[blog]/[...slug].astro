@@ -6,6 +6,11 @@ import { generateBlogPostPaths } from "@features/blog/utils/generate-blog-post-p
 import FormattedDate from "@shared/components/FormattedDate.astro";
 import { useTranslations } from "@i18n/use-translations";
 import { calculateReadingTime } from "@shared/utils/calculate-reading-time";
+import { resolvePath } from "@shared/utils/resolve-path";
+import { C } from "@/site.config";
+import { LOCALE_PARAM_MAP } from "@shared/utils/locale-param-map";
+import sluggify from "limax";
+import Chip from "@shared/components/Chip.astro";
 
 export async function getStaticPaths() {
   return generateBlogPostPaths();
@@ -16,6 +21,8 @@ const locale = toLocale(props.data.locale);
 const t = useTranslations(locale);
 const { Content } = await render(props);
 const readingTimeMinutes = calculateReadingTime(props.body);
+const blogSegment = C.SEGMENT_TRANSLATIONS[locale].blog;
+const localeParam = LOCALE_PARAM_MAP[locale];
 ---
 
 <MainLayout
@@ -36,6 +43,27 @@ const readingTimeMinutes = calculateReadingTime(props.body);
         <span aria-hidden="true">•</span>
         <span>{t("blog.readingTime", { minutes: readingTimeMinutes })}</span>
       </div>
+      {
+        props.data.tags.length > 0 && (
+          <div
+            class="mb-6 flex flex-wrap justify-center gap-2"
+            data-testid="blog-post-tags"
+          >
+            {props.data.tags.map((tag) => (
+              <Chip
+                href={resolvePath(
+                  localeParam,
+                  blogSegment,
+                  "tag",
+                  sluggify(tag),
+                )}
+              >
+                {tag}
+              </Chip>
+            ))}
+          </div>
+        )
+      }
       <h1
         class="text-5xl leading-tight font-bold text-gray-900 dark:text-white"
         data-testid="blog-post-title"

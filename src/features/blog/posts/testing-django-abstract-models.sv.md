@@ -2,6 +2,7 @@
 title: "Testa Djangos abstrakta modeller utan att skräpa ner migreringshistoriken"
 description: "Ett enkelt mönster för att testa Djangos abstrakta modeller: temporära konkretta modeller, SchemaEditor och städad teardown."
 publishedAt: 2026-02-19
+tags: ["django", "testing", "backend"]
 draft: false
 ---
 
