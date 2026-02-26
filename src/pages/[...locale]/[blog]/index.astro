@@ -7,6 +7,10 @@ import { generateBlogIndexPaths } from "@features/blog/utils/generate-blog-index
 import type { BlogPost } from "@features/blog/utils/generate-blog-index-paths";
 import { calculateReadingTime } from "@shared/utils/calculate-reading-time";
 import { C } from "@/site.config";
+import { getTagOptions } from "@features/blog/utils/get-tag-options";
+import Chip from "@shared/components/Chip.astro";
+import { resolvePath } from "@shared/utils/resolve-path";
+import { LOCALE_PARAM_MAP } from "@shared/utils/locale-param-map";
 
 export async function getStaticPaths() {
   const paths = await generateBlogIndexPaths();
@@ -22,6 +26,9 @@ export async function getStaticPaths() {
 const { posts, translations, showLanguageBadge } = Astro.props;
 const locale = toLocale(Astro.props.locale);
 const t = useTranslations(locale);
+const tags = getTagOptions(posts);
+const blogSegment = C.SEGMENT_TRANSLATIONS[locale].blog;
+const localeParam = LOCALE_PARAM_MAP[locale];
 ---
 
 <MainLayout
@@ -35,24 +42,40 @@ const t = useTranslations(locale);
   <p class="text-gray-600 dark:text-gray-400" data-testid="blog-description">
     {t("blog.description")}
   </p>
-  <div class="space-y-4">
+  <section class="space-y-3">
+    <div class="flex flex-wrap gap-2">
+      <Chip href={resolvePath(localeParam, blogSegment)} active={true}>
+        {t("blog.allTags")}
+      </Chip>
+      {
+        tags.map((tag) => (
+          <Chip href={resolvePath(localeParam, blogSegment, "tag", tag.slug)}>
+            {tag.label}
+          </Chip>
+        ))
+      }
+    </div>
+  </section>
+  <div class="space-y-4" data-blog-results>
     {
       posts.map((post: BlogPost) => (
-        <BlogListItem
-          title={post.data.title}
-          date={new Date(post.data.publishedAt).toLocaleDateString(locale, {
-            day: "numeric",
-            month: "long",
-            year: "numeric",
-          })}
-          readingTime={t("blog.readingTime", {
-            minutes: calculateReadingTime(post.body),
-          })}
-          excerpt={post.data.description}
-          href={post.translatedPath}
-          language={post.data.locale}
-          showLanguageBadge={showLanguageBadge}
-        />
+        <div>
+          <BlogListItem
+            title={post.data.title}
+            date={new Date(post.data.publishedAt).toLocaleDateString(locale, {
+              day: "numeric",
+              month: "long",
+              year: "numeric",
+            })}
+            readingTime={t("blog.readingTime", {
+              minutes: calculateReadingTime(post.body),
+            })}
+            excerpt={post.data.description}
+            href={post.translatedPath}
+            language={post.data.locale}
+            showLanguageBadge={showLanguageBadge}
+          />
+        </div>
       ))
     }
   </div>

@@ -2,6 +2,7 @@
 title: "Using .env variables in package.json scripts"
 description: "Shell env vs .env files: when to use dotenv-cli, cross-env, and Node's --env-file."
 publishedAt: 2025-12-17
+tags: ["nodejs", "tooling", "environment"]
 draft: false
 ---
 

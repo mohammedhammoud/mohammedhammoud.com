@@ -54,6 +54,7 @@ If any step is skipped or fails, report:
 - Follow existing architectural patterns.
 - Make the smallest change necessary.
 - Avoid unrelated refactors.
+- For utility code: one file should represent one function, and file name should match function name (follow existing utils structure).
 - Keep tasks small (SHOULD touch ≤3 files unless required).
 - Tests:
   - unit: `*.test.ts`

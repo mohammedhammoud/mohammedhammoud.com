@@ -2,6 +2,7 @@
 title: "Testing Django abstract models without cluttering your migrations"
 description: "A clean pattern for testing Django abstract model behavior: temporary concrete models, SchemaEditor, and predictable teardown."
 publishedAt: 2026-02-19
+tags: ["django", "testing", "backend"]
 draft: false
 ---
 

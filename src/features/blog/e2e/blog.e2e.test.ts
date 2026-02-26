@@ -45,4 +45,17 @@ for (const locale of locales) {
     await expect(contentElement).toBeVisible();
     await expect(contentElement).toHaveText(nonEmptyTextRegex);
   });
+
+  test(`[${locale.key}] navigate to tag page from blog tag chip`, async ({
+    page,
+  }) => {
+    await page.goto(locale.blog);
+
+    const tagLink = page.locator('a[href*="/tag/"]').first();
+    await expect(tagLink).toBeVisible();
+    await tagLink.click();
+
+    await expect(page).toHaveURL(/\/tag\/[^/]+\/?$/);
+    await expect(page.getByTestId("blog-tag-heading")).toBeVisible();
+  });
 }

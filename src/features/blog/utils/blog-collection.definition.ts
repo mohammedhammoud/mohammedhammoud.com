@@ -12,6 +12,7 @@ export const blogCollectionDefinition = defineCollection({
         title: z.string(),
         description: z.string(),
         publishedAt: z.coerce.date(),
+        tags: z.array(z.string()).default([]),
         draft: z.boolean().optional().default(false),
         cover: z
           .object({
