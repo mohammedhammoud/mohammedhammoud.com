@@ -1,3 +1,10 @@
+## [1.7.1](https://github.com/mohammedhammoud/mohammedhammoud.com/compare/v1.7.0...v1.7.1) (2026-02-26)
+
+
+### Bug Fixes
+
+* **blog:** remove redundant all-tags chip ([#13](https://github.com/mohammedhammoud/mohammedhammoud.com/issues/13)) ([54e3c0f](https://github.com/mohammedhammoud/mohammedhammoud.com/commit/54e3c0fad6045487481a22f87a4c319649ec07f6))
+
 # [1.7.0](https://github.com/mohammedhammoud/mohammedhammoud.com/compare/v1.6.0...v1.7.0) (2026-02-26)
 
 
