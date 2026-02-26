@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/mohammedhammoud/mohammedhammoud.com/compare/v1.6.0...v1.7.0) (2026-02-26)
+
+
+### Features
+
+* **blog:** add localized tag pages and navigation ([#11](https://github.com/mohammedhammoud/mohammedhammoud.com/issues/11)) ([5af0bad](https://github.com/mohammedhammoud/mohammedhammoud.com/commit/5af0badce2c6890c4c5915c9c7a80c792ab33e3a))
+
 # [1.6.0](https://github.com/mohammedhammoud/mohammedhammoud.com/compare/v1.5.0...v1.6.0) (2026-02-25)
 
 
