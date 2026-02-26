@@ -44,9 +44,6 @@ const localeParam = LOCALE_PARAM_MAP[locale];
   </p>
   <section class="space-y-3">
     <div class="flex flex-wrap gap-2">
-      <Chip href={resolvePath(localeParam, blogSegment)} active={true}>
-        {t("blog.allTags")}
-      </Chip>
       {
         tags.map((tag) => (
           <Chip href={resolvePath(localeParam, blogSegment, "tag", tag.slug)}>
