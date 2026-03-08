@@ -92,6 +92,11 @@ If any step is skipped or fails, report:
    - Commands run + results
    - Remaining risks
 
+### Commit conventions
+
+- Use `blog:` for publishable blog post/content commits that should trigger a release.
+- Use `docs:` for repository/project documentation that should not trigger a content release.
+
 ## Output (MUST)
 
 - Default: show only `git status --short` and `git diff --stat`.
