@@ -2,7 +2,7 @@
 title: "How I Turned Codex CLI into a Structured Engineering Assistant"
 description: "Why I built reusable Codex CLI skills to add structure, discipline, and safer workflows to AI-assisted development."
 publishedAt: 2026-03-08
-tags: ["ai", "codex"]
+tags: ["ai"]
 draft: false
 ---
 
