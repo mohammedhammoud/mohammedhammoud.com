@@ -4,6 +4,7 @@ import JobListItem from "@features/experience/components/JobListItem.astro";
 import AwardListItem from "@features/experience/components/AwardListItem.astro";
 import CertificateListItem from "@features/experience/components/CertificateListItem.astro";
 import SectionHeading from "@shared/components/SectionHeading.astro";
+import Card from "@shared/components/Card.astro";
 import { useTranslations } from "@i18n/use-translations";
 import { toLocale } from "@i18n/to-locale";
 import { generateExperienceStaticPaths } from "@features/experience/utils/generate-experience-static-paths";
@@ -20,7 +21,9 @@ const t = useTranslations(locale);
 
 const jobsData = await loadData<Job>("jobs", locale);
 const awardsData = await loadData<Award>("awards", locale);
-const certificatesData = await loadData<Certificate>("certificates", locale);
+const certificatesData = (
+  await loadData<Certificate>("certificates", locale)
+).sort((a, b) => Number(b.year) - Number(a.year));
 ---
 
 <MainLayout
@@ -63,18 +66,22 @@ const certificatesData = await loadData<Certificate>("certificates", locale);
 
   <SectionHeading text={t("experience.certificates")} />
 
-  <div class="space-y-4" data-testid="certificates-list">
-    {
-      certificatesData.map((cert) => (
-        <CertificateListItem
-          title={cert.title}
-          year={cert.year}
-          description={cert.description}
-          credentialId={cert.credentialId}
-          credentialUrl={cert.credentialUrl}
-          credentialLabel={t("experience.credentialId")}
-        />
-      ))
-    }
-  </div>
+  <Card variant="bordered" padding="sm">
+    <ul
+      class="divide-y divide-gray-200 dark:divide-gray-700"
+      data-testid="certificates-list"
+    >
+      {
+        certificatesData.map((cert) => (
+          <CertificateListItem
+            title={cert.title}
+            issuer={cert.issuer}
+            year={cert.year}
+            credentialId={cert.credentialId}
+            credentialUrl={cert.credentialUrl}
+          />
+        ))
+      }
+    </ul>
+  </Card>
 </MainLayout>
