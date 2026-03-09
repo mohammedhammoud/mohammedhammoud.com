@@ -94,7 +94,8 @@ If any step is skipped or fails, report:
 
 ### Commit conventions
 
-- Use `blog:` for publishable blog post/content commits that should trigger a release.
+- Use `feat(blog):` for publishable blog post/content commits that should trigger a release.
+- Use `fix(blog):` for blog post/content corrections that should trigger a patch release.
 - Use `docs:` for repository/project documentation that should not trigger a content release.
 
 ## Output (MUST)
