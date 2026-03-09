@@ -1,3 +1,10 @@
+## [1.7.3](https://github.com/mohammedhammoud/mohammedhammoud.com/compare/v1.7.2...v1.7.3) (2026-03-09)
+
+
+### Bug Fixes
+
+* **experience:** streamline certificates section ([#25](https://github.com/mohammedhammoud/mohammedhammoud.com/issues/25)) ([c7b81e8](https://github.com/mohammedhammoud/mohammedhammoud.com/commit/c7b81e885ebf297c88d87d3e924a8046dc44eddc))
+
 ## [1.7.2](https://github.com/mohammedhammoud/mohammedhammoud.com/compare/v1.7.1...v1.7.2) (2026-03-08)
 
 ## [1.7.1](https://github.com/mohammedhammoud/mohammedhammoud.com/compare/v1.7.0...v1.7.1) (2026-02-26)
