@@ -10,8 +10,8 @@ export interface Job {
 
 export interface Certificate {
   title: string;
+  issuer?: string;
   year: string;
-  description: string;
   credentialId?: string;
   credentialUrl?: string;
 }

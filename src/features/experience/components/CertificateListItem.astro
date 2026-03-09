@@ -1,50 +1,90 @@
 ---
-import Card from "@shared/components/Card.astro";
+import { ExternalLink } from "@lucide/astro";
 
 interface Props {
   title: string;
+  issuer?: string;
   year: string;
-  description: string;
   credentialId?: string;
   credentialUrl?: string;
-  credentialLabel?: string;
 }
 
-const {
-  title,
-  year,
-  description,
-  credentialId,
-  credentialUrl,
-  credentialLabel,
-} = Astro.props;
+const { title, issuer, year, credentialId, credentialUrl } = Astro.props;
+
+const separatorClass = "px-2 text-gray-400 dark:text-gray-500";
+const interactiveSeparatorClass =
+  "px-2 text-gray-400 transition-colors group-hover:text-gray-500 dark:text-gray-500 dark:group-hover:text-gray-400";
+const yearClass =
+  "shrink-0 text-xs font-medium tracking-wide text-gray-500 dark:text-gray-400";
+const interactiveRowClass =
+  "group flex items-start justify-between gap-4 py-3 text-sm text-gray-700 transition-colors hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100";
+const staticRowClass =
+  "flex items-start justify-between gap-4 py-3 text-sm text-gray-700 dark:text-gray-300";
+const credentialLinkClass =
+  "inline-flex items-center gap-1 text-blue-600 transition-colors group-hover:text-blue-700 dark:text-blue-400 dark:group-hover:text-blue-300";
+const contentClass = "min-w-0 flex-1";
 ---
 
-<Card variant="bordered">
-  <h3 class="mb-1 text-lg font-medium text-gray-900 dark:text-gray-100">
-    {title}
-  </h3>
-  <p class="mb-3 text-sm text-gray-500 dark:text-gray-400">{year}</p>
-  <p class="text-sm leading-relaxed text-gray-700 dark:text-gray-300">
-    {description}
-  </p>
+<li>
   {
-    credentialId && credentialLabel && (
-      <p class="mt-3 text-xs text-gray-500 dark:text-gray-400">
-        {credentialLabel}{" "}
-        {credentialUrl ? (
-          <a
-            href={credentialUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-blue-600 hover:underline dark:text-blue-400"
-          >
-            {credentialId}
-          </a>
-        ) : (
-          credentialId
-        )}
-      </p>
+    credentialUrl ? (
+      <a
+        href={credentialUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class={interactiveRowClass}
+      >
+        <div class={contentClass}>
+          <h3 class="inline font-medium text-gray-900 dark:text-gray-100">
+            {title}
+          </h3>
+          {issuer && (
+            <>
+              <span aria-hidden="true" class={interactiveSeparatorClass}>
+                &middot;
+              </span>
+              <span>{issuer}</span>
+            </>
+          )}
+          {credentialId && (
+            <>
+              <span aria-hidden="true" class={interactiveSeparatorClass}>
+                &middot;
+              </span>
+              <span class={credentialLinkClass}>
+                {credentialId}
+                <ExternalLink aria-hidden="true" class="h-3.5 w-3.5" />
+              </span>
+            </>
+          )}
+        </div>
+        <span class={yearClass}>{year}</span>
+      </a>
+    ) : (
+      <div class={staticRowClass}>
+        <div class={contentClass}>
+          <h3 class="inline font-medium text-gray-900 dark:text-gray-100">
+            {title}
+          </h3>
+          {issuer && (
+            <>
+              <span aria-hidden="true" class={separatorClass}>
+                &middot;
+              </span>
+              <span>{issuer}</span>
+            </>
+          )}
+          {credentialId && (
+            <>
+              <span aria-hidden="true" class={separatorClass}>
+                &middot;
+              </span>
+              <span>{credentialId}</span>
+            </>
+          )}
+        </div>
+        <span class={yearClass}>{year}</span>
+      </div>
     )
   }
-</Card>
+</li>

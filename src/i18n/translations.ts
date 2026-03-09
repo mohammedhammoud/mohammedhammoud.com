@@ -21,7 +21,6 @@ export const translations = {
     "experience.title": "Experience",
     "experience.awards": "Awards",
     "experience.certificates": "Certificates",
-    "experience.credentialId": "Credential ID:",
 
     "social.github": "GitHub",
     "social.linkedin": "LinkedIn",
@@ -55,7 +54,6 @@ export const translations = {
     "experience.title": "Erfarenhet",
     "experience.awards": "Utmärkelser",
     "experience.certificates": "Certifikat",
-    "experience.credentialId": "Credential ID:",
 
     "social.github": "GitHub",
     "social.linkedin": "LinkedIn",
