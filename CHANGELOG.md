@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/mohammedhammoud/mohammedhammoud.com/compare/v1.7.4...v1.8.0) (2026-04-18)
+
+
+### Features
+
+* **blog:** add token usage article ([a72afc4](https://github.com/mohammedhammoud/mohammedhammoud.com/commit/a72afc4f3992992dd42ce1eac931bdca115a9ffa))
+
 ## [1.7.4](https://github.com/mohammedhammoud/mohammedhammoud.com/compare/v1.7.3...v1.7.4) (2026-03-09)
 
 ## [1.7.3](https://github.com/mohammedhammoud/mohammedhammoud.com/compare/v1.7.2...v1.7.3) (2026-03-09)
