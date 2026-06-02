@@ -1,3 +1,10 @@
+# [1.9.0](https://github.com/mohammedhammoud/mohammedhammoud.com/compare/v1.8.0...v1.9.0) (2026-06-02)
+
+
+### Features
+
+* **blog:** add LLM context scaling benchmark on RTX 5090 ([9ae20da](https://github.com/mohammedhammoud/mohammedhammoud.com/commit/9ae20da87785ccde6f510c61eaaad15a72768f5e))
+
 # [1.8.0](https://github.com/mohammedhammoud/mohammedhammoud.com/compare/v1.7.4...v1.8.0) (2026-04-18)
 
 
