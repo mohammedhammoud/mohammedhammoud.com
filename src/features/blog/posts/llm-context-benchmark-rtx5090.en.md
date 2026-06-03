@@ -14,13 +14,13 @@ Most model cards focus on maximum supported context lengths, often quoting numbe
 
 What is rarely discussed is the real-world latency cost.
 
-I wanted to measure how context scaling affects interactive usage on consumer hardware and determine whether larger context windows are actually useful for coding workflows.
+I wanted to measure how context scaling affects interactive usage on consumer hardware and where the practical limits start to appear for local coding assistants, RAG systems and agent workflows.
 
 The benchmark was performed locally on a single RTX 5090 using Ollama.
 
 ## Hardware setup
 
-- RTX 5090 (32GB VRAM)
+- RTX 5090 with 32GB VRAM
 - AMD Ryzen 9 9950X
 - 64GB DDR5 RAM
 - Samsung 9100 Pro Gen5 SSD
@@ -81,12 +81,14 @@ Context sizes tested:
 
 Metrics collected:
 
-- TTFT (time to first token)
+- TTFT, time to first token
 - Total generation time
 - End-to-end throughput
 - Relative context scaling behavior
 
 All reported values are averages across three runs.
+
+One important note: token throughput is approximate. The script estimates output tokens using `len(text) // 4`, so the results should be read as practical benchmark numbers rather than exact tokenizer-level measurements.
 
 ## Results
 
@@ -128,9 +130,9 @@ All reported values are averages across three runs.
 | 96k     | 44%            |
 | 128k    | 22%            |
 
-Interestingly, both models follow almost the exact same degradation curve.
+Interestingly, both models follow almost the same degradation curve.
 
-This strongly suggests the bottleneck is not model architecture but KV-cache growth and memory bandwidth pressure.
+That suggests the bottleneck is less about model architecture and more about the cost of maintaining and attending over a larger context window, especially KV-cache growth and memory bandwidth pressure.
 
 ## Key findings
 
@@ -138,20 +140,18 @@ This strongly suggests the bottleneck is not model architecture but KV-cache gro
 
 At 32k context:
 
-- qwen3.6:35b-a3b reaches ~50 tok/s
-- qwen3.6:27b reaches ~24 tok/s
+- qwen3.6:35b-a3b reaches about 50 tok/s
+- qwen3.6:27b reaches about 24 tok/s
 
-The MoE model delivers roughly double the throughput despite having a larger parameter count.
+The MoE model delivers roughly double the throughput despite having a larger total parameter count.
 
 This was the largest performance difference observed during the benchmark.
 
 ### 2. Context scaling is expensive
 
-Doubling context size does not double latency.
+Increasing context size has a clear cost.
 
-It often increases latency significantly more than expected.
-
-TTFT grows especially aggressively:
+TTFT grows aggressively as context increases:
 
 | Context | 27B TTFT | 35B-A3B TTFT |
 | ------- | -------- | ------------ |
@@ -160,46 +160,64 @@ TTFT grows especially aggressively:
 | 96k     | 52.2s    | 24.6s        |
 | 128k    | 80.1s    | 50.0s        |
 
-Interactive responsiveness degrades long before throughput becomes unusable.
+Throughput also drops significantly, but TTFT is what affects the interactive feeling the most.
 
-### 3. 64k appears to be the sweet spot
+For local coding and agent workflows, the model can still be generating at an acceptable speed while the initial wait starts to feel expensive.
 
-For coding workloads:
+### 3. 64k is the sweet spot, but 96k is still usable
 
-- 32k is fastest
-- 64k provides significantly more workspace while remaining responsive
-- 96k starts feeling noticeably slower
-- 128k becomes difficult to justify for interactive use
+For this setup:
+
+- 32k is very fast
+- 64k feels like the best balance
+- 96k is still usable and honestly impressive on consumer hardware
+- 128k works, but the UX tradeoff becomes much more noticeable
+
+This is the main practical takeaway.
+
+The question is not whether a model can technically run a large context window. It can.
+
+The better question is whether that context window still feels good to use interactively.
+
+On this RTX 5090 setup, 64k feels like the practical sweet spot for responsiveness. 96k is still useful for larger analysis tasks. 128k is where the latency starts becoming harder to justify unless the workflow is more batch-oriented.
 
 ### 4. Bigger context does not make the model smarter
 
-One of the most common misconceptions around LLMs is that larger context windows improve reasoning.
+One common misconception around LLMs is that larger context windows improve reasoning.
 
-The benchmark shows the opposite tradeoff:
+They do not.
 
-Increasing context size primarily increases latency.
+A larger context window gives the model more information to attend over, but the model itself does not become more capable.
 
-Model intelligence remains unchanged.
+The tradeoff is simple:
 
-The question is not:
+More context gives more workspace, but it also increases latency.
 
-> "How much context can the model support?"
+So the useful question is not:
+
+> "How much context does the model support?"
 
 The more useful question is:
 
-> "How much context can I afford before the user experience collapses?"
+> "How much context can I afford before the user experience becomes too slow?"
 
 ## Conclusion
 
 For local coding assistants running on RTX 5090-class hardware:
 
-- 32k is ideal for speed
+- 32k is ideal when speed matters most
 - 64k is the best overall balance
-- 96k is useful for analysis-heavy tasks
-- 128k should be reserved for batch-style workloads
+- 96k is still very usable for larger codebase or analysis-heavy tasks
+- 128k works, but is better suited for slower, batch-style workflows
 
-The most surprising result was not how slow 128k became.
+The most interesting result was not simply that 128k became slower.
 
-It was how consistently both models followed the same degradation pattern.
+That was expected.
 
-The limiting factor appears to be memory bandwidth and KV-cache scaling rather than model architecture itself.
+The more useful finding was where the practical boundary appears on consumer hardware.
+
+A single RTX 5090 can handle surprisingly large context windows, especially with qwen3.6:35b-a3b. But the cost grows quickly, and responsiveness becomes the limiting factor before the model becomes unusable.
+
+Bigger context is useful.
+
+But only if the interaction still feels responsive.
