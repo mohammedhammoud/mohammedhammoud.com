@@ -1,3 +1,10 @@
+# [1.10.0](https://github.com/mohammedhammoud/mohammedhammoud.com/compare/v1.9.0...v1.10.0) (2026-06-03)
+
+
+### Features
+
+* **blog:** rewrite context scaling benchmark sections for clarity ([a5997c6](https://github.com/mohammedhammoud/mohammedhammoud.com/commit/a5997c68b5877dd09ec0101ff8411bd03f13a72c))
+
 # [1.9.0](https://github.com/mohammedhammoud/mohammedhammoud.com/compare/v1.8.0...v1.9.0) (2026-06-02)
 
 
