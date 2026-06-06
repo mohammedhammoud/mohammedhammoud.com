@@ -1,3 +1,10 @@
+# [1.11.0](https://github.com/mohammedhammoud/mohammedhammoud.com/compare/v1.10.0...v1.11.0) (2026-06-06)
+
+
+### Features
+
+* **blog:** re-running RTX 5090 LLM benchmark on Ollama 0.30 ([edaf357](https://github.com/mohammedhammoud/mohammedhammoud.com/commit/edaf3570b7073c844bbb2ff14e108422f976b848))
+
 # [1.10.0](https://github.com/mohammedhammoud/mohammedhammoud.com/compare/v1.9.0...v1.10.0) (2026-06-03)
 
 
