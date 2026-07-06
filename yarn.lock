@@ -2607,10 +2607,10 @@ astro-loader-i18n@^0.11.1:
   resolved "https://registry.yarnpkg.com/astro-loader-i18n/-/astro-loader-i18n-0.11.1.tgz#9b00c96ac1f2f8db1eed4c0d318546c3fd0fc98e"
   integrity sha512-JLrfUR0EsQb/dKPBRsuGkbXyQIBGSGNwB7vcf8lQF9e28lW2+YVfGXfRZSPzrmP/iZjkIuD44sGgO0DD2e7vWQ==
 
-astro@^6.4.6:
-  version "6.4.6"
-  resolved "https://registry.yarnpkg.com/astro/-/astro-6.4.6.tgz#913d5d6cc18a294bf03567772d35137d5d851f6c"
-  integrity sha512-48OBTBKR9ctbf+DQxpOuxGl8ebfn59zTuNQMBzptmG/Mi/H8IdfMSbJgGuX1I/4U6g9yazG1p4BHlf4+2hWU4Q==
+astro@^6.4.8:
+  version "6.4.8"
+  resolved "https://registry.yarnpkg.com/astro/-/astro-6.4.8.tgz#3eadb0158a99469ce8f08399ca0937d77491682f"
+  integrity sha512-KK5lX90uU9EeVaTjINyj3sy9/NFXVa59aowaqbWBDDKLXZh4rr7GwIaCFYVetE22MJtsCNFerQXn0vlCLmpP/Q==
   dependencies:
     "@astrojs/compiler" "^4.0.0"
     "@astrojs/internal-helpers" "0.10.0"
