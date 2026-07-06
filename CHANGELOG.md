@@ -1,3 +1,10 @@
+# [1.13.0](https://github.com/mohammedhammoud/mohammedhammoud.com/compare/v1.12.0...v1.13.0) (2026-07-06)
+
+
+### Features
+
+* **deps:** bump the production-dependencies group across 1 directory with 10 updates ([#87](https://github.com/mohammedhammoud/mohammedhammoud.com/issues/87)) ([5fb746a](https://github.com/mohammedhammoud/mohammedhammoud.com/commit/5fb746ac3740076642fa880186c1a84a5dc2eee8))
+
 # [1.12.0](https://github.com/mohammedhammoud/mohammedhammoud.com/compare/v1.11.1...v1.12.0) (2026-07-06)
 
 
