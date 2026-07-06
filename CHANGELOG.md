@@ -1,3 +1,10 @@
+# [1.12.0](https://github.com/mohammedhammoud/mohammedhammoud.com/compare/v1.11.1...v1.12.0) (2026-07-06)
+
+
+### Features
+
+* **deps:** bump astro from 6.1.8 to 6.4.6 ([#77](https://github.com/mohammedhammoud/mohammedhammoud.com/issues/77)) ([9182e12](https://github.com/mohammedhammoud/mohammedhammoud.com/commit/9182e124b856728266a6e37d9ca65e9040cb1646))
+
 ## [1.11.1](https://github.com/mohammedhammoud/mohammedhammoud.com/compare/v1.11.0...v1.11.1) (2026-07-06)
 
 
