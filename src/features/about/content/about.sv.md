@@ -25,6 +25,6 @@ Jag försöker hålla lösningar enkla och lätta att ändra över tid, med anv�
 
 ## Utanför jobbet
 
-Jag intresserar mig för cybersäkerhet och går just nu Googles Cybersecurity Certificate, med ett långsiktigt intresse för applikations- och molnsäkerhet.
+Jag fördjupar just nu mina kunskaper inom cloud engineering och infrastruktur, med fokus på AWS.
 
 Jag pratar svenska, engelska och arabiska.

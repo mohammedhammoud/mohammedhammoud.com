@@ -25,6 +25,6 @@ I try to keep solutions simple and easy to change over time, with user experienc
 
 ## Outside work
 
-I'm exploring cybersecurity and currently working through Google's Cybersecurity Certificate, with a long-term interest in application and cloud security.
+I'm currently deepening my knowledge of cloud engineering and infrastructure, with a focus on AWS.
 
 I speak English, Swedish, and Arabic.
