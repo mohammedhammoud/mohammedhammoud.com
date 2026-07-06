@@ -64,24 +64,28 @@ const certificatesData = (
     }
   </div>
 
-  <SectionHeading text={t("experience.certificates")} />
+  {
+    certificatesData.length > 0 && (
+      <>
+        <SectionHeading text={t("experience.certificates")} />
 
-  <Card variant="bordered" padding="sm">
-    <ul
-      class="divide-y divide-gray-200 dark:divide-gray-700"
-      data-testid="certificates-list"
-    >
-      {
-        certificatesData.map((cert) => (
-          <CertificateListItem
-            title={cert.title}
-            issuer={cert.issuer}
-            year={cert.year}
-            credentialId={cert.credentialId}
-            credentialUrl={cert.credentialUrl}
-          />
-        ))
-      }
-    </ul>
-  </Card>
+        <Card variant="bordered" padding="sm">
+          <ul
+            class="divide-y divide-gray-200 dark:divide-gray-700"
+            data-testid="certificates-list"
+          >
+            {certificatesData.map((cert) => (
+              <CertificateListItem
+                title={cert.title}
+                issuer={cert.issuer}
+                year={cert.year}
+                credentialId={cert.credentialId}
+                credentialUrl={cert.credentialUrl}
+              />
+            ))}
+          </ul>
+        </Card>
+      </>
+    )
+  }
 </MainLayout>

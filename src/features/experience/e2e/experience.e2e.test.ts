@@ -28,7 +28,7 @@ for (const locale of locales) {
     await expect(mainContent).toHaveText(nonEmptyTextRegex);
   });
 
-  test(`[${locale.key}] experience page lists jobs, certificates and awards`, async ({
+  test(`[${locale.key}] experience page lists jobs and awards`, async ({
     page,
   }) => {
     await page.goto(locale.experience);
@@ -38,7 +38,7 @@ for (const locale of locales) {
     const awardsList = page.getByTestId("awards-list");
 
     await expect(jobsList.locator("h3").first()).toBeVisible();
-    await expect(certificatesList.locator("h3").first()).toBeVisible();
+    await expect(certificatesList).toBeHidden();
     await expect(awardsList.locator("h3").first()).toBeVisible();
   });
 }
