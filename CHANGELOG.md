@@ -1,3 +1,10 @@
+## [1.11.1](https://github.com/mohammedhammoud/mohammedhammoud.com/compare/v1.11.0...v1.11.1) (2026-07-06)
+
+
+### Bug Fixes
+
+* **experience:** hide certificates section when list is empty ([bef91b7](https://github.com/mohammedhammoud/mohammedhammoud.com/commit/bef91b7ad36ee1477200df2d6e3abb2329bd1ea9))
+
 # [1.11.0](https://github.com/mohammedhammoud/mohammedhammoud.com/compare/v1.10.0...v1.11.0) (2026-06-06)
 
 
