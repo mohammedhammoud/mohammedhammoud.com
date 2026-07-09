@@ -230,16 +230,15 @@
     stream-replace-string "^2.0.0"
     zod "^4.3.6"
 
-"@astrojs/telemetry@3.3.2":
-  version "3.3.2"
-  resolved "https://registry.yarnpkg.com/@astrojs/telemetry/-/telemetry-3.3.2.tgz#9174d444e120da70d966dfc976d9e37a3c09262d"
-  integrity sha512-j8DNruA8ors99Al39RYZPJK4DC1bKkoNm93mAMuBhY9TCNC4R8n1q7ovFnJ5qhGh5Lsh7pa1gpQVpYpsJPeTHQ==
+"@astrojs/telemetry@3.3.3":
+  version "3.3.3"
+  resolved "https://registry.yarnpkg.com/@astrojs/telemetry/-/telemetry-3.3.3.tgz#24e5bcf203d1ac07747c02e3f0710137272082b8"
+  integrity sha512-C1TLn5sPJr0x4vk56piHWKbnqlEB8BKyte5Y45V02U+D7BGO5eMqZDH5aPjnkXQWJggvmsTXxH03QMZ9NgWLzQ==
   dependencies:
     ci-info "^4.4.0"
     dset "^3.1.4"
     is-docker "^4.0.0"
-    is-wsl "^3.1.1"
-    which-pm-runs "^1.1.0"
+    package-manager-detector "^1.6.0"
 
 "@astrojs/yaml2ts@^0.2.2":
   version "0.2.2"
@@ -2721,15 +2720,15 @@ astro-loader-i18n@^1.0.0:
   resolved "https://registry.yarnpkg.com/astro-loader-i18n/-/astro-loader-i18n-1.0.0.tgz#db108cf3ca3d3e7304b6c8056f4bddb1c4a08bc5"
   integrity sha512-tYY2dBTn9fEO82/WcT9FJbL9yOcn9cfXIP2+kPM5LdGLYv47Cl3IM/Mr6qnhbpCUY5pL1taG3NzI/6rX70lXnQ==
 
-astro@^7.0.6:
-  version "7.0.6"
-  resolved "https://registry.yarnpkg.com/astro/-/astro-7.0.6.tgz#c3718ff998811ab5dfefe9b928eeecb7e346e1cc"
-  integrity sha512-Myw0sFia+zs/Y0yqfZEsUYXfDPh3ELcLf1f0Q/qQzVXBh/af1qO62WNT+P89DCcfGVV51nMoQhEfkBYqJmoUOQ==
+astro@^7.0.7:
+  version "7.0.7"
+  resolved "https://registry.yarnpkg.com/astro/-/astro-7.0.7.tgz#f3e16a1cf125dd1d114cd47550adb8a476180141"
+  integrity sha512-swqrKDSI/B83GFroYPZYMFcxqbSe9+tkynu1WDBk3GLgBfV9++qVM4Z+2uFT6uu9A53Q0TROnxLketfMEENuqQ==
   dependencies:
     "@astrojs/compiler-rs" "^0.3.0"
     "@astrojs/internal-helpers" "0.10.1"
     "@astrojs/markdown-satteri" "0.3.3"
-    "@astrojs/telemetry" "3.3.2"
+    "@astrojs/telemetry" "3.3.3"
     "@capsizecss/unpack" "^4.0.0"
     "@clack/prompts" "^1.1.0"
     "@oslojs/encoding" "^1.1.0"
@@ -4624,11 +4623,6 @@ is-decimal@^2.0.0:
   resolved "https://registry.yarnpkg.com/is-decimal/-/is-decimal-2.0.1.tgz#9469d2dc190d0214fd87d78b78caecc0cc14eef7"
   integrity sha512-AAB9hiomQs5DXWcRB1rqsxGUstbRroFOPPVAomNk/3XHR5JyEZChOyTWe2oayKnsSsr/kcGqF+z6yuH6HHpN0A==
 
-is-docker@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/is-docker/-/is-docker-3.0.0.tgz#90093aa3106277d8a77a5910dbae71747e15a200"
-  integrity sha512-eljcgEDlEns/7AXFosB5K/2nCM4P7FQPkGc/DWLy5rmFEWvZayGrik1d9/QIY5nJ4f9YsVvBkA6kJpHn9rISdQ==
-
 is-docker@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/is-docker/-/is-docker-4.0.0.tgz#6aab87c77a30ddff39c460af372ee1795aee7848"
@@ -4662,13 +4656,6 @@ is-hexadecimal@^2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/is-hexadecimal/-/is-hexadecimal-2.0.1.tgz#86b5bf668fca307498d319dfc03289d781a90027"
   integrity sha512-DgZQp241c8oO6cA1SbTEWiXeoxV42vlcJxgH+B3hi1AiqqKruZR3ZGF8In3fj4+/y/7rHvlOZLZtgJ/4ttYGZg==
-
-is-inside-container@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/is-inside-container/-/is-inside-container-1.0.0.tgz#e81fba699662eb31dbdaf26766a61d4814717ea4"
-  integrity sha512-KIYLCCJghfHZxqjYBE7rEy0OBuTd5xCHS7tHVgvCLkx7StIoaxwNW3hCALgEUjFfeRk+MG/Qxmp/vtETEF3tRA==
-  dependencies:
-    is-docker "^3.0.0"
 
 is-number@^7.0.0:
   version "7.0.0"
@@ -4704,13 +4691,6 @@ is-unicode-supported@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/is-unicode-supported/-/is-unicode-supported-2.1.0.tgz#09f0ab0de6d3744d48d265ebb98f65d11f2a9b3a"
   integrity sha512-mE00Gnza5EEB3Ds0HfMyllZzbBrmLOX3vfWoj9A9PEnTfratQ/BcaJOuMhnkhjXvb2+FkY3VuHqtAGpTPmglFQ==
-
-is-wsl@^3.1.1:
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/is-wsl/-/is-wsl-3.1.1.tgz#327897b26832a3eb117da6c27492d04ca132594f"
-  integrity sha512-e6rvdUCiQCAuumZslxRJWR/Doq4VpPR82kqclvcS0efgt430SlGIk05vdCN58+VrzgtIcfNODjozVielycD4Sw==
-  dependencies:
-    is-inside-container "^1.0.0"
 
 isarray@~1.0.0:
   version "1.0.0"
@@ -8529,11 +8509,6 @@ web-worker@1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/web-worker/-/web-worker-1.2.0.tgz#5d85a04a7fbc1e7db58f66595d7a3ac7c9c180da"
   integrity sha512-PgF341avzqyx60neE9DD+XS26MMNMoUQRz9NOZwW32nPQrF6p77f1htcnjBSEV8BGMKZ16choqUG4hyI0Hx7mA==
-
-which-pm-runs@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/which-pm-runs/-/which-pm-runs-1.1.0.tgz#35ccf7b1a0fce87bd8b92a478c9d045785d3bf35"
-  integrity sha512-n1brCuqClxfFfq/Rb0ICg9giSZqCS+pLtccdag6C2HyufBrh3fBOiy9nb6ggRMvWOVH5GrdJskj5iGTZNxd7SA==
 
 which@^2.0.1:
   version "2.0.2"
