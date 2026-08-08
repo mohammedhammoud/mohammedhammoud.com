@@ -1,3 +1,14 @@
+# [1.14.0](https://github.com/mohammedhammoud/mohammedhammoud.com/compare/v1.13.0...v1.14.0) (2026-08-08)
+
+
+### Features
+
+* **deps:** bump actions/setup-node from 6 to 7 ([#93](https://github.com/mohammedhammoud/mohammedhammoud.com/issues/93)) ([f6af1d6](https://github.com/mohammedhammoud/mohammedhammoud.com/commit/f6af1d6909985ebf5b09d312c0996b771ca59531))
+* **deps:** bump brace-expansion from 5.0.2 to 5.0.9 ([#102](https://github.com/mohammedhammoud/mohammedhammoud.com/issues/102)) ([c05c245](https://github.com/mohammedhammoud/mohammedhammoud.com/commit/c05c245aaeae11ae772bdd829a88e370059f5926))
+* **deps:** bump fast-uri from 3.1.3 to 3.1.5 ([#103](https://github.com/mohammedhammoud/mohammedhammoud.com/issues/103)) ([195ecdd](https://github.com/mohammedhammoud/mohammedhammoud.com/commit/195ecdd3a7711e0aa951ac922192126f479f0dda))
+* **deps:** bump svgo from 4.0.1 to 4.0.2 ([#100](https://github.com/mohammedhammoud/mohammedhammoud.com/issues/100)) ([d681152](https://github.com/mohammedhammoud/mohammedhammoud.com/commit/d6811523c3fe9c9526a87743a4df4d7253ea802f))
+* **deps:** bump the production-dependencies group across 1 directory with 6 updates ([#97](https://github.com/mohammedhammoud/mohammedhammoud.com/issues/97)) ([e2a7ace](https://github.com/mohammedhammoud/mohammedhammoud.com/commit/e2a7ace9a7670e089703fea29668540a8b864232))
+
 # [1.13.0](https://github.com/mohammedhammoud/mohammedhammoud.com/compare/v1.12.0...v1.13.0) (2026-07-06)
 
 
