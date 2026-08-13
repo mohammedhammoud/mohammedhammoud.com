@@ -1,3 +1,10 @@
+# [1.15.0](https://github.com/mohammedhammoud/mohammedhammoud.com/compare/v1.14.0...v1.15.0) (2026-08-13)
+
+
+### Features
+
+* **blog:** add aws route tables article ([c5cf443](https://github.com/mohammedhammoud/mohammedhammoud.com/commit/c5cf443ed3df2e4bce9a10c6129390ac5948a589))
+
 # [1.14.0](https://github.com/mohammedhammoud/mohammedhammoud.com/compare/v1.13.0...v1.14.0) (2026-08-08)
 
 
